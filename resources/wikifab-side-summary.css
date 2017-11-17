@@ -1,0 +1,43 @@
+.vertical-sidebar{
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: width .5s;
+    padding-top: 60px;
+    
+
+}
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.openNav{
+	position:fixed;
+	left:20px;
+	top:20px;
+}
+
+.pushBodyLeft {
+	margin-left:250px ;
+    transition: margin-left .5s;
+}
+.pushBodyRight{
+	margin-left:0px ;
+	transition: .5s;
+}
+.fixed {
+    position: fixed;
+    top: 0
+}
+.nav li a:link.active {
+	font-weight:bold;
+	font-size:26px;
+}

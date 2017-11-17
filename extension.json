@@ -1,0 +1,40 @@
+{
+	"name": "Side Summary",
+	"author": "Solene",
+	"version": "1.0.0",
+	"url": "https://www.mediawiki.org/wiki/Extension:SideSummary",
+	"descriptionmsg": "Side Summary",
+	"license-name": "GPL-2.0+",
+	"type": "parserhook",
+	"ResourceModules": {
+		"ext.sidesummary.js": {
+			"scripts": [
+				"resources/wikifab-side-summary.js"
+			]
+		},
+		"ext.sidesummary.css": {
+			"styles": [
+				"resources/wikifab-side-summary.css"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "Side Summary"
+	},
+	"AutoloadClasses": {
+		"SideSummary": "includes/SideSummary.class.php"
+	},
+	"ExtensionMessagesFiles": {
+		"SideSummary": "SideSummary.i18n.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": [
+			"SideSummary::onParserSetup"
+		],
+		"BeforePageDisplay": [
+			"SideSummary::onBeforePageDisplay"
+		]
+	},
+	"manifest_version": 1
+}

@@ -1,0 +1,7 @@
+{
+    "name": "wikifab/side-summary",
+    "description": "Mediawiki extension to integrate Video url from Youtube, vimeo, dailymotion, or others to come...",
+    "type": "mediawiki-extension",
+    "require": {
+    }
+}
