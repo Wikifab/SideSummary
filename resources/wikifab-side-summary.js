@@ -12,6 +12,7 @@
 			$('.vertical-sidebar').css('width', '250px');
 			$('body').addClass("pushBodyLeft");
 			$('body').removeClass("pushBodyRight");
+			$(".container").attr("width","auto");
 			$('.openNav').hide();
 		});
 		$('.closebtn').click(function(){
