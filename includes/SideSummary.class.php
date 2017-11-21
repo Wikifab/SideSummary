@@ -17,7 +17,7 @@ class SideSummary {
             $out ="<div class=\"vertical-sidebar\">$param1";
             $out .=" <span class=\"closebtn\" >x</span>";
             $out .= "</div>";
-            $out .=" <i class=\"openNav fa fa-bars\"> </i>";
+            $out .=" <span class=\"openNav\"> <i class=\"fa fa-bars\"> </i></span>";
 
             return array( $out, 'noparse' => false );
 
