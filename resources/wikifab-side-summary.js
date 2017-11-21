@@ -9,9 +9,15 @@
 		$('#toc ul').addClass("nav nav-pills nav-stacked");
 		
 		$('.openNav').click(function(){
-			$('.vertical-sidebar').css('width', '250px');
-			$('body').addClass("pushBodyLeft");
-			$('body').removeClass("pushBodyRight");
+			if (window.matchMedia("(max-width: 600px)").matches) {
+				$('.vertical-sidebar').css('width', '100%');
+			}
+			else {
+				$('.vertical-sidebar').css('width', '250px');
+				$('body').addClass("pushBodyLeft");
+				$('body').removeClass("pushBodyRight");
+			}
+			
 			$('.openNav').hide();
 		});
 		$('.closebtn').click(function(){

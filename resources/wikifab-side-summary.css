@@ -30,6 +30,7 @@
 	margin-left:250px ;
     transition: margin-left .5s;
 }
+
 .pushBodyRight{
 	margin-left:0px ;
 	transition: .5s;
