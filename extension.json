@@ -20,7 +20,7 @@
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
-		"remoteExtPath": "Side Summary"
+		"remoteExtPath": "SideSummary"
 	},
 	"AutoloadClasses": {
 		"SideSummary": "includes/SideSummary.class.php"

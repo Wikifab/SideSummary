@@ -49,3 +49,18 @@
 	left: 20px;
 	transition: .2s;
 }
+.vertical-sidebar li li{
+	display:none;
+}
+.vertical-sidebar li.summarycollapse > ul > li {
+	display:block;
+}
+.summarycollapse > i.right-arrow{
+	display:none;
+}
+i.down-arrow{
+	display:none;
+}
+.summarycollapse > i.down-arrow{
+	display:inline;
+}

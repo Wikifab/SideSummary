@@ -9,12 +9,12 @@ class SideSummary {
     }
 
     //
-    public static function renderSideSummary( $parser, $param1 ='') {
+    public static function renderSideSummary( $parser, $param1) {
         if ((!$param1)){
             $param1 = '__TOC__';
         }
-
-            $out ="<div class=\"vertical-sidebar\">$param1";
+            $out ="<div class=\"vertical-sidebar\">\n";
+            $out .= $param1;
             $out .=" <span class=\"closebtn\" >x</span>";
             $out .= "</div>";
             $out .=" <span class=\"openNav\"> <i class=\"fa fa-bars\"> </i></span>";
