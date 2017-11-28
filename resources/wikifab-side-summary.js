@@ -26,6 +26,7 @@
 			
 		// Bouton pour ouvrir le menu avec un effet de push sur la droite 
 		$('.openNav').click(function(){
+			$('.closebtn').show();
 			if (window.matchMedia("(max-width: 600px)").matches) {
 				$('.vertical-sidebar').css('width', '100%');
 			}

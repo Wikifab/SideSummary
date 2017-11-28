@@ -15,7 +15,7 @@ class SideSummary {
         }
             $out ="<div class=\"vertical-sidebar\">\n";
             $out .= $param1;
-            $out .=" <span class=\"closebtn\" >x</span>";
+            $out .=" \n <span class=\"closebtn\" >x</span>";
             $out .= "</div>";
             $out .=" <span class=\"openNav\"> <i class=\"fa fa-bars\"> </i></span>";
 
