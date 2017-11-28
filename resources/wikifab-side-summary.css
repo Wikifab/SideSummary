@@ -5,35 +5,105 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #f8f8f8;
+    border-right: 1px solid #ddd;
     overflow-x: hidden;
-    transition: width .5s;
-    padding-top: 60px;
-    
-
+    transition: width .25s;
+    padding-top: 35px;
 }
+
+.vertical-sidebar .template_div {
+	padding: 0px 10px;
+}
+
+.vertical-sidebar .template_div a,
+.vertical-sidebar .template_div li strong {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+ }
+
+.vertical-sidebar .template_div li strong {
+ 	color:#337ab7;
+}
+
+.vertical-sidebar .template_div a.new:link,
+.vertical-sidebar .template_div a.new:visited {
+	color:#30373b;
+}
+
+.vertical-sidebar .template_div a.new:link:hover,
+.vertical-sidebar .template_div a.new:visited:hover {
+ 	color:#333333;
+}
+
+.vertical-sidebar .template_div ul, 
+.vertical-sidebar .template_div li,
+.vertical-sidebar .template_div li strong,
+.vertical-sidebar .template_div table,
+.vertical-sidebar .template_div td,
+.vertical-sidebar .template_div tr,
+.vertical-sidebar .template_div tbody,
+.vertical-sidebar .template_div {
+	float:left;
+	width:100%;
+	display: block;
+}
+
 .closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    right: 0px;
+    font-size: 22px;
+    margin-left: 0px;
+    color: #ccc;
+    transition: 0.2s;
+    padding: 0 12px;
 }
-.openNav{
-	position:fixed;
-	left:20px;
-	top:80px;
-	transition: .2s;
+
+.closebtn:hover {
+	color: #aaa;
+	cursor: pointer;
+}
+
+.openNav {
+position: fixed;
+    left: 20px;
+    top: 73px;
+    transition: .2s;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 6px 10px;
+    border-radius: 3px;
+}
+
+.openNav:hover {
+	cursor:pointer;
+
 }
 
 .pushBodyLeft {
 	margin-left:250px ;
-    transition: margin-left .5s;
+    transition: margin-left .25s;
+}
+
+@media (max-width: 1200px) {
+.pushBodyLeft .container {
+	width: auto;
+	    -webkit-transition: left 250ms ease;
+    -moz-transition: left 250ms ease;
+    -o-transition: left 250ms ease;
+    transition: left 250ms ease;
+}
 }
 
 .pushBodyRight{
 	margin-left:0px ;
-	transition: .5s;
+	transition: .25s;
 }
 .fixed {
     position: fixed;
