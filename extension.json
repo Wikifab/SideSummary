@@ -23,7 +23,8 @@
 		"remoteExtPath": "SideSummary"
 	},
 	"AutoloadClasses": {
-		"SideSummary": "includes/SideSummary.class.php"
+		"SideSummary": "includes/SideSummary.class.php",
+		"Skins\\Chameleon\\Components\\SideSummary":"includes/SideSummary.php"
 	},
 	"ExtensionMessagesFiles": {
 		"SideSummary": "SideSummary.i18n.php"
@@ -34,6 +35,9 @@
 		],
 		"BeforePageDisplay": [
 			"SideSummary::onBeforePageDisplay"
+		],
+		"SkinTemplateNavigation":[
+			"SideSummary::onSkinTemplateNavigation"
 		]
 	},
 	"manifest_version": 1

@@ -55,7 +55,22 @@
 			$('.openNav').show();
 		});
 		
+		// Quand on scroll sur la page on fixe le bouton du menu en haut de la page et le menu
+		$(window).scroll(function() {    
 
+		    var scroll = $(window).scrollTop();
+
+		    if (scroll >= 52) {
+		    	
+		        $(".openNav").addClass("positionChanged");
+		        $('.vertical-sidebar').addClass('hookMenu');
+		    }
+		    else {
+		    	$(".openNav").removeClass("positionChanged");
+		        $('.vertical-sidebar').removeClass('hookMenu');
+
+		    }
+		});
 
 		// Permet de suivre avec le menu là où on en est dans la page 
 		
@@ -65,18 +80,7 @@
 		
 		$('#toc ul').addClass("nav nav-pills nav-stacked");
 		
-		$(window).scroll(function() {    
-
-		    var scroll = $(window).scrollTop();
-
-		    if (scroll >= 52) {
-		    	
-		        $(".openNav").addClass("positionChanged");
-		    }
-		    else {
-		    	$(".openNav").removeClass("positionChanged");
-		    }
-		});
+		
 
 		
 	});
