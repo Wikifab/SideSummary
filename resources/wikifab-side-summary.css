@@ -6,57 +6,94 @@
     top: 0;
     left: 0;
     background-color: #f8f8f8;
-    border-right: 1px solid #ddd;
     overflow-x: hidden;
     transition: width .25s;
-    padding-top: 35px;
+    padding-top: 75px;
+    border-right: 1px solid #ccc;
 }
 
-.vertical-sidebar .template_div {
-	padding: 0px 10px;
-}
-
-.vertical-sidebar .template_div a,
-.vertical-sidebar .template_div li strong {
+.vertical-sidebar li {
+	padding: 6px 0px;
+    white-space: nowrap;
+    vertical-align: baseline;
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;
-    position: relative;
+}
+
+.vertical-sidebar li a,
+.vertical-sidebar li strong {
+    padding-left: 28px;
+}
+
+.vertical-sidebar li li a,
+.vertical-sidebar li li strong {
+    padding-left: 53px;
+}
+
+.vertical-sidebar li li li a,
+.vertical-sidebar li li li strong {
+    padding-left: 78px;
+}
+
+.vertical-sidebar li li li li a,
+.vertical-sidebar li li li li strong {
+    padding-left: 103px;
+}
+
+.vertical-sidebar li .fa {
+	margin-left: 5px;
+}
+
+.vertical-sidebar li li .fa {
+	margin-left: 28px;
+}
+
+.vertical-sidebar li li li .fa {
+	margin-left: 53px;
+}
+
+.vertical-sidebar li li li li .fa {
+	margin-left: 78px;
+}
+
+.vertical-sidebar li.active { 
+	border-right: 2px solid blue;
+    background: #fff;
+}
+
+.vertical-sidebar ul {
+    margin: 0px;
+    padding-left: 0px;
+}
+
+.mw-body .vertical-sidebar ul {
+	list-style: none;
+}
+
+.mw-body .vertical-sidebar .fa {
+    width: 20px;
     float: left;
-    width: 100%;
-    margin-bottom: 10px;
- }
-
-.vertical-sidebar .template_div li strong {
- 	color:#337ab7;
+    height: 20px;
+    font-size: 0.85em;
+    padding-top: 5px;
+    text-align: center;
+    border-radius: 3px;
+    color: #ccc;
+    position: absolute;
 }
 
-.vertical-sidebar .template_div a.new:link,
-.vertical-sidebar .template_div a.new:visited {
-	color:#30373b;
+.mw-body .vertical-sidebar .fa:hover {
+	background-color:#ccc;
+	color:#aaa;
+	cursor: pointer;
 }
 
-.vertical-sidebar .template_div a.new:link:hover,
-.vertical-sidebar .template_div a.new:visited:hover {
- 	color:#333333;
-}
-
-.vertical-sidebar .template_div ul, 
-.vertical-sidebar .template_div li,
-.vertical-sidebar .template_div li strong,
-.vertical-sidebar .template_div table,
-.vertical-sidebar .template_div td,
-.vertical-sidebar .template_div tr,
-.vertical-sidebar .template_div tbody,
-.vertical-sidebar .template_div {
-	float:left;
-	width:100%;
-	display: block;
+.mw-body .vertical-sidebar ul ul {
 }
 
 .closebtn {
     position: absolute;
-    top: 0;
+    top: 55px;
     right: 0px;
     font-size: 22px;
     margin-left: 0px;
@@ -86,9 +123,14 @@ position: fixed;
 
 }
 
-.pushBodyLeft {
+.pushBodyLeft div.wiki-nav,
+.pushBodyLeft div.wiki-nav + div {
 	margin-left:250px ;
     transition: margin-left .25s;
+}
+
+.pushBodyLeft nav {
+    z-index: 10;
 }
 
 @media (max-width: 1200px) {
