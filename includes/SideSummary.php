@@ -15,8 +15,9 @@ class SideSummary extends Component {
     public function getHtml() {
 
         $contentNavigation = $this->getSkinTemplate()->data[ 'content_navigation' ];
+
         if(!isset($contentNavigation['SideSummary'])) {
-            return '<div class="sideSummary"></div>';
+            return '';
         }
 
         $ret = $this->indent() . '<div class="SideSummary">';

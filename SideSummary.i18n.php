@@ -15,7 +15,10 @@ $magicWords = array();
  */
 $magicWords['en'] = array(
    'sideSummary' => array( 0, 'sideSummary' ),
+   'sidePageSummary' => array(0, 'sidePageSummary'),
 );
 $magicWords['fr'] = array(
   'sideSummary' => array( 0, 'sideSummary' ),
+  'sidePageSummary' => array(0, 'sidePageSummary'),
+
 );

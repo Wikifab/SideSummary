@@ -23,7 +23,7 @@
 		"remoteExtPath": "SideSummary"
 	},
 	"AutoloadClasses": {
-		"SideSummary": "includes/SideSummary.class.php",
+		"SideSummary\\SideSummary": "includes/SideSummary.class.php",
 		"Skins\\Chameleon\\Components\\SideSummary":"includes/SideSummary.php"
 	},
 	"ExtensionMessagesFiles": {
@@ -31,13 +31,13 @@
 	},
 	"Hooks": {
 		"ParserFirstCallInit": [
-			"SideSummary::onParserSetup"
+			"SideSummary\\SideSummary::onParserSetup"
 		],
 		"BeforePageDisplay": [
-			"SideSummary::onBeforePageDisplay"
+			"SideSummary\\SideSummary::onBeforePageDisplay"
 		],
 		"SkinTemplateNavigation":[
-			"SideSummary::onSkinTemplateNavigation"
+			"SideSummary\\SideSummary::onSkinTemplateNavigation"
 		]
 	},
 	"manifest_version": 1
