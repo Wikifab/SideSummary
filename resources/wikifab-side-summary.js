@@ -60,6 +60,19 @@
 				$('body').addClass("pushBodyLeft");
 				$('body').removeClass("pushBodyRight");
 			}
+			$(window).scroll(function() {    
+
+			    var scroll = $(window).scrollTop();
+
+			    if (scroll >= 20) {
+			    	
+			        $('.SideSummary').addClass('hookMenuTop');
+			    }
+			    else {
+			        $('.SideSummary').removeClass('hookMenuTop');
+
+			    }
+			});
 		
 		}		
 		
