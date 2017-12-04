@@ -30,18 +30,17 @@ First of all, add this component in your layout, where you need summary :
 	
 Then, create a Mediawiki:PageName page with bullet points, and each item is page's title.  
 
- * [[Level 1]]
- ** [[SubLevel 1.1]]
- ** [[SubLevel 1.2]]
- * [[Level2]]
- ** [[SubLevel 2.1]]
- *** [[SubSubLevel 2.1.1]]
- *** [[SubSubLevel 2.1.2]]
- ** [[SubLevel 2.2]]
- *** [[SubSubLevel 2.2.1]]
- *** [[SubSubLevel 2.2.2]]
+	* [[Level 1]]
+	** [[SubLevel 1.1]]
+	** [[SubLevel 1.2]]
+	* [[Level2]]
+	** [[SubLevel 2.1]]
+	*** [[SubSubLevel 2.1.1]]
+	*** [[SubSubLevel 2.1.2]]
+	** [[SubLevel 2.2]]
+	*** [[SubSubLevel 2.2.1]]
+	*** [[SubSubLevel 2.2.2]]
 	
-
 
 After that, at the beggining of each page add this line, the summary will appear only on this pages.
 
