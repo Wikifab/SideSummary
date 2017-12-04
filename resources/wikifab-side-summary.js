@@ -66,9 +66,11 @@
 
 			    if (scroll >= 20) {
 			    	
+			        $(".openNav").addClass("positionChanged");
 			        $('.SideSummary').addClass('hookMenuTop');
 			    }
 			    else {
+			        $(".openNav").removeClass("positionChanged");
 			        $('.SideSummary').removeClass('hookMenuTop');
 
 			    }

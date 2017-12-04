@@ -19,14 +19,14 @@ class SideSummary extends Component {
         if(!isset($contentNavigation['SideSummary'])) {
             return '';
         }
+        $ret =$this->indent(). " <span class=\"openNav\"> <i class=\"fa fa-bars\"> </i></span>";
 
-        $ret = $this->indent() . '<div class="SideSummary">';
+        $ret .= $this->indent() . '<div class="SideSummary">';
         $this->indent(+1);
         $ret .= $this->indent() ."<div class=\"vertical-sidebar\">";
         $ret .= $this->indent() . $contentNavigation['SideSummary']['summary']['name'];
         $ret .=$this->indent() . "<span class=\"closebtn\" >x</span>";
         $ret .= $this->indent() . "</div>";
-        $ret .=$this->indent(). " <span class=\"openNav\"> <i class=\"fa fa-bars\"> </i></span>";
         $this->indent(-1);
         $ret .=$this->indent(). "</div>";
         return $ret;
