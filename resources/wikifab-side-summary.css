@@ -140,7 +140,17 @@
 
 .vertical-sidebar ul ul {
 }
-
+.buttonClose{
+	float: left;
+    transition: .2s;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 6px 10px;
+    border-radius: 3px;
+    margin-left: 15px;
+    margin-top: -66px;
+    position: absolute;
+}
 .closebtn {
     position: absolute;
     top: 0px;
@@ -156,7 +166,18 @@
 	color: #aaa;
 	cursor: pointer;
 }
-
+.buttonOpen {
+	
+	float: left;
+    transition: .2s;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 6px 10px;
+    border-radius: 3px;
+    margin-left: 15px;
+    margin-top: -66px;
+    position: absolute;
+}
 .openNav {
     float: left;
     transition: .2s;
