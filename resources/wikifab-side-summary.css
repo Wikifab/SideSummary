@@ -6,9 +6,9 @@
     left: 0;
     background-color: #f8f8f8;
     overflow-x: hidden;
-    transition: width .25s;
     padding-top: 75px;
     border-right: 1px solid #ccc;
+    transition: width .25s;
 }
 .SideSummary{
     width: 0px;
@@ -18,10 +18,20 @@
     overflow-x: hidden;
     border-right: 1px solid #ccc;
     z-index: 1;
-    
+    height:100%;
+    margin-top: -20px;
+    padding-top:32px;
+    transition: width .25s;
 }
+
+.SideSummary.hookMenuTop {
+    margin-top: 0px;
+    position: fixed;
+    top:0;
+}
+
 .vertical-sidebar li {
-	padding: 6px 0px;
+	padding: 8px 0px;
     white-space: nowrap;
     vertical-align: baseline;
     text-overflow: ellipsis;
@@ -65,8 +75,9 @@
 }
 
 .vertical-sidebar li.active { 
-	border-right: 2px solid blue;
-    background: #fff;
+    background-image: url('img/bg-slider-hover.jpg');
+    background-position: right top;
+    background-repeat: no-repeat;
 }
 
 .vertical-sidebar ul {
@@ -74,11 +85,38 @@
     padding-left: 0px;
 }
 
-.mw-body .vertical-sidebar ul {
+.vertical-sidebar ul {
 	list-style: none;
 }
 
-.mw-body .vertical-sidebar .fa {
+.action-edit .openNav,
+.action-edit .SideSummary,
+.action-history .openNav,
+.action-history .SideSummary,
+.action-delete .openNav,
+.action-delete .SideSummary,
+.action-protect .openNav, 
+.action-protect .SideSummary {
+    display: none;
+}
+
+.action-edit.pushBodyLeft div.SideSummary + div.container,
+.action-edit.pushBodyLeft div.footer-main .footer-info,
+.action-edit.pushBodyLeft div.footer-main .container,
+.action-history.pushBodyLeft div.SideSummary + div.container,
+.action-history.pushBodyLeft div.footer-main .footer-info,
+.action-history.pushBodyLeft div.footer-main .container,
+.action-delete.pushBodyLeft div.SideSummary + div.container,
+.action-delete.pushBodyLeft div.footer-main .footer-info,
+.action-delete.pushBodyLeft div.footer-main .container,
+.action-protect.pushBodyLeft div.SideSummary + div.container,
+.action-protect.pushBodyLeft div.footer-main .footer-info,
+.action-protect.pushBodyLeft div.footer-main .container, {
+    margin-left:0px;
+    width:100%;
+}
+
+.vertical-sidebar .fa {
     width: 20px;
     float: left;
     height: 20px;
@@ -90,18 +128,22 @@
     position: absolute;
 }
 
-.mw-body .vertical-sidebar .fa:hover {
+.vertical-sidebar a:hover {
+    cursor: pointer;
+}
+
+.vertical-sidebar .fa:hover {
 	background-color:#ccc;
 	color:#aaa;
 	cursor: pointer;
 }
 
-.mw-body .vertical-sidebar ul ul {
+.vertical-sidebar ul ul {
 }
 
 .closebtn {
     position: absolute;
-    top: 55px;
+    top: 0px;
     right: 0px;
     font-size: 22px;
     margin-left: 0px;
@@ -116,35 +158,54 @@
 }
 
 .openNav {
-position: fixed;
-    left: 20px;
-    top: 73px;
+    float: left;
     transition: .2s;
     background: #fff;
     border: 1px solid #eee;
     padding: 6px 10px;
     border-radius: 3px;
+    margin-left: 15px;
+    margin-top: -66px;
+    position: absolute;
 }
 
 .openNav:hover {
 	cursor:pointer;
-
 }
 
-.pushBodyLeft div.wiki-nav,
-.pushBodyLeft div.wiki-nav + div {
-	margin-left:250px ;
-    transition: margin-left .25s;
+div.SideSummary + div.container #bodyContent {
+    min-height: 300px;
+}
+
+
+.pushBodyLeft div.SideSummary + div.container,
+.pushBodyLeft div.footer-main .footer-info,
+.pushBodyLeft div.footer-main .container {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+div.SideSummary + div.container,
+div.footer-main .footer-info,
+div.footer-main .container {
+    transition: .25s;
+    width: 100%;
+    margin: 0px;
 }
 
 .pushBodyLeft nav {
     z-index: 10;
 }
 
+body.pushBodyRight .navbar-brand img,
+body.pushBodyLeft .navbar-brand img {
+    margin-left: 59px;
+}
+
 @media (max-width: 1200px) {
 .pushBodyLeft .container {
 	width: auto;
-	    -webkit-transition: left 250ms ease;
+    -webkit-transition: left 250ms ease;
     -moz-transition: left 250ms ease;
     -o-transition: left 250ms ease;
     transition: left 250ms ease;
@@ -163,12 +224,7 @@ position: fixed;
 	font-weight:bold;
 	font-size:26px;
 }
-.positionChanged {
-	position:fixed;
-	top: 20px;
-	left: 20px;
-	transition: .2s;
-}
+
 .vertical-sidebar li li{
 	display:none;
 }

@@ -16,7 +16,7 @@
 			$('body').addClass("pushBodyLeft");
 			$('body').removeClass("pushBodyRight");
 		
-			$('.openNav').hide();
+			$('.openNav').replaceWith($('.closebtn'));
 		});
 		
 		
@@ -64,13 +64,11 @@
 
 			    var scroll = $(window).scrollTop();
 
-			    if (scroll >= 20) {
+			    if (scroll >= 54) {
 			    	
-			        $(".openNav").addClass("positionChanged");
 			        $('.SideSummary').addClass('hookMenuTop');
 			    }
 			    else {
-			        $(".openNav").removeClass("positionChanged");
 			        $('.SideSummary').removeClass('hookMenuTop');
 
 			    }
