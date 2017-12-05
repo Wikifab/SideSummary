@@ -20,7 +20,7 @@
     z-index: 1;
     height:100%;
     margin-top: -20px;
-    padding-top:32px;
+    padding-top:15px;
     transition: width .25s;
 }
 
@@ -140,17 +140,20 @@
 
 .vertical-sidebar ul ul {
 }
-.buttonClose{
+.buttonClose {
 	float: left;
     transition: .2s;
     background: #fff;
     border: 1px solid #eee;
-    padding: 6px 10px;
+    padding: 6px 10.5px;
     border-radius: 3px;
     margin-left: 15px;
     margin-top: -66px;
     position: absolute;
+    z-index: 10;
+    display: none;
 }
+
 .closebtn {
     position: absolute;
     top: 0px;
@@ -190,7 +193,8 @@
     position: absolute;
 }
 
-.openNav:hover {
+.openNav:hover,
+.buttonClose:hover {
 	cursor:pointer;
 }
 
@@ -218,9 +222,8 @@ div.footer-main .container {
     z-index: 10;
 }
 
-body.pushBodyRight .navbar-brand img,
-body.pushBodyLeft .navbar-brand img {
-    margin-left: 59px;
+body.HasSideSummary .navbar-brand img {
+    margin-left: 45px;
 }
 
 @media (max-width: 1200px) {
@@ -230,6 +233,15 @@ body.pushBodyLeft .navbar-brand img {
     -moz-transition: left 250ms ease;
     -o-transition: left 250ms ease;
     transition: left 250ms ease;
+}
+}
+
+@media (min-width: 1200px) {
+.nav.navbar-nav {
+    display:block;
+    }
+body.HasSideSummary .navbar-brand img {
+    margin-left: 0px;
 }
 }
 

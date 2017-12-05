@@ -4,20 +4,21 @@
 	$(document).ready(function() {
 		// Pour les deux cas (SideSummary et PageSummary)
 		
-		
-				
+
+		if (window.matchMedia("(max-width: 600px)").matches) {
+					$('.sidePageSummary').css('width', '100%');
+					$('.SideSummary').css('width', '100%');
+					$('.buttonClose').show();
+					$('.buttonOpen').hide();
+				}
 		
 		// Seulement pour SideSummary
 		if ($('.SideSummary').length > 0){
+			$('body').addClass("HasSideSummary");
 			
 			// Bouton pour ouvrir le menu avec un effet de push sur la droite 
 			$('.buttonOpen').click(function(){
 				$('.buttonClose').show();
-				if (window.matchMedia("(max-width: 600px)").matches) {
-					$('.sidePageSummary').css('width', '100%');
-					$('.SideSummary').css('width', '100%');
-
-				}
 				$('.sidePageSummary').css('width', '250px');
 				$('.SideSummary').css('width', '250px');
 				$('body').addClass("pushBodyLeft");
@@ -30,6 +31,7 @@
 			
 			//Bouton pour fermer le menu
 			$('.buttonClose').click(function(){
+				$('.buttonClose').hide();
 				$('.sidePageSummary').css('width', '0px');
 				$('.SideSummary').css('width', '0px');
 				$('body').removeClass("pushBodyLeft");
