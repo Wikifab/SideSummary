@@ -2,32 +2,44 @@
 (function() {
 	
 	$(document).ready(function() {
-		
+				
 		// Seulement pour SideSummary
 		if ($('.SideSummary').length > 0){
-			$('body').addClass("HasSideSummary");
-				
-			// Bouton pour ouvrir le menu avec un effet de push sur la droite 
-			$('.buttonOpen').click(function(){
-				$('.buttonClose').show();
+			$('body').addClass('HasSideSummary');
+			// Si l'écran est plus grand que 1200px on affiche directement le menu
+			if(window.matchMedia("(min-width: 1200px)").matches){
+				$('.buttonOpen').hide();
 				$('.SideSummary').css('width', '250px');
 				$('body').addClass("pushBodyLeft");
 				$('body').removeClass("pushBodyRight");
+			}
+			// Bouton pour ouvrir le menu avec un effet de push sur la droite 
+			$('.buttonOpen').click(function(){
+				$('.buttonClose').show();
+				if (window.matchMedia("(max-width: 600px)").matches) {
+					$('.SideSummary').css('width', '100%');
+
+				}
+				else {
+					$('.SideSummary').css('width', '250px');
+					$('body').addClass("pushBodyLeft");
+					$('body').removeClass("pushBodyRight");
+				}
+				
 				
 				$('.buttonOpen').hide();
 
 			});
 			
-			
 			//Bouton pour fermer le menu
 			$('.buttonClose').click(function(){
-				$('.buttonClose').hide();
+				$('.buttonOpen').show();
+
 				$('.SideSummary').css('width', '0px');
 				$('body').removeClass("pushBodyLeft");
 				$('body').addClass("pushBodyRight");
-				$('.buttonOpen').show();
+				$('.buttonClose').hide();
 			});
-				
 			// Permet de faire fonctionner le système des flèches avec les sous-menus 
 			$('.vertical-sidebar .selflink').parents(".vertical-sidebar li").addClass('summarycollapse');
 			$('.vertical-sidebar .selflink').parent().addClass('active');
@@ -46,7 +58,9 @@
 			$('.down-arrow').click(function(){
 				$(this).parent().removeClass('summarycollapse');
 			});
-						
+			
+			
+			
 			$(window).scroll(function() {    
 
 			    var scroll = $(window).scrollTop();
@@ -69,6 +83,10 @@
 			// Bouton pour ouvrir le menu avec un effet de push sur la droite 
 			$('.openNav').click(function(){
 				$('.closebtn').show();
+				if (window.matchMedia("(max-width: 600px)").matches) {
+					$('.sidePageSummary').css('width', '100%');
+
+				}
 				$('.sidePageSummary').css('width', '250px');
 				$('body').addClass("pushBodyLeft");
 				$('body').removeClass("pushBodyRight");
