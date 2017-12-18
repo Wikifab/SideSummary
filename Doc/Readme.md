@@ -18,7 +18,7 @@ Once you load the extension, at the end of your LocalSettings.php file add the f
 ### A page summary
 If you want a page summary which contains titles and subtitles parts and follows users when they scroll down or top of the page, you need to add this line in your page or template. 
 
-	{{#sideSummary:{{__TOC__}}}}
+	{{#sidePageSummary: __TOC__ }}
 
 
 ### Website map 
