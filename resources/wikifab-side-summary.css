@@ -7,7 +7,6 @@
     border-right: 1px solid #ccc;
     z-index: 100;
     height:100%;
-    margin-top: -20px;
     padding-top:15px;
     transition: width .25s;
     padding-bottom:50px;
@@ -19,25 +18,6 @@
     top:0;
 }
 
-#PushOverlay {
-    transition: opacity 1s;
-    opacity: 0;
-}
-
-#PushOverlay.active {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0px;
-    left: 0;
-    background-color: rgba(0,0,0, 0.9);
-    overflow-y: auto;
-    overflow-x: hidden;
-    text-align: center;
-    opacity: 0.8;
-    transition: opacity 0.25s;
-}
 
 .vertical-sidebar li {
     float: left;
@@ -133,32 +113,6 @@
     width:100%;
 }
 
-.vertical-sidebar .fa {
-    width: 20px;
-    float: left;
-    height: 20px;
-    font-size: 0.85em;
-    margin-top: 5px;
-    padding-top: 6px;
-    text-align: center;
-    border-radius: 3px;
-    color: #ccc;
-    position: absolute;
-}
-
-.vertical-sidebar a:hover {
-    cursor: pointer;
-}
-
-.vertical-sidebar .fa:hover {
-	background-color:#ccc;
-	color:#aaa;
-	cursor: pointer;
-}
-
-.vertical-sidebar ul ul {
-}
-
 .buttonClose {
     float: left;
     transition: .2s;
@@ -175,22 +129,12 @@
     transition: opacity 0.2s;
 }
 
-.closebtn {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    font-size: 22px;
-    margin-left: 0px;
-    color: #ccc;
-    transition: 0.2s;
-    padding: 0 12px;
-}
-
 .closebtn:hover {
 	color: #aaa;
 	cursor: pointer;
 }
-.buttonOpen {
+.buttonOpen
+ {
     float: left;
     transition: .2s;
     padding: 6px 10px;
@@ -211,19 +155,8 @@
     position: fixed;
     top: 0;
 }
-.openNav {
-    float: left;
-    transition: .2s;
-    background: #fff;
-    border: 1px solid #eee;
-    padding: 6px 10px;
-    border-radius: 3px;
-    margin-left: 15px;
-    margin-top: -66px;
-    position: absolute;
-}
 
-.openNav:hover,
+
 .buttonOpen:hover,
 .buttonClose:hover {
 	cursor:pointer;
@@ -238,127 +171,135 @@ div.SideSummary + div.container #bodyContent {
 }
 
 
-.pushBodyLeft  {
-    margin-left: 250px;
-    width: calc(100% - 250px);
-}
 
-/* .containerBodyWithoutSS { */
-/*     transition: .25s; */
-/*     width: 100%; */
-/*     margin: 0px; */
-/* } */
-
-.pushBodyLeft nav {
-    z-index: 10;
-}
-
-.action-edit.HasSideSummary #p-logo img,
-.action-history.HasSideSummary #p-logo img,
-.action-delete.HasSideSummary #p-logo img,
-.action-protect.HasSideSummary #p-logo img {
+.action-edit.containerBodyWithoutSS #p-logo img,
+.action-history.containerBodyWithoutSS #p-logo img,
+.action-delete.containerBodyWithoutSS #p-logo img,
+.action-protect.containerBodyWithoutSS #p-logo img {
     margin-left: 0px;
 }
 
-@media (max-width: 1200px) {
-.pushBodyLeft .containerBodyWithoutSS {
-	width: auto;
-    -webkit-transition: left 250ms ease;
-    -moz-transition: left 250ms ease;
-    -o-transition: left 250ms ease;
-    transition: left 250ms ease;
-}
-}
+@media (min-width: 769px) {
 
-/* @media (min-width: 1200px) { */
-/* .nav.navbar-nav { */
-/*     display:block; */
-/*     } */
-/* } */
+	.pushBodyLeft  {
+	    margin-left: 250px;
+	    width: calc(100% - 250px);
+	}
+	
+	.pushBodyLeft nav {
+	    z-index: 10;
+	}
 
-.pushBodyRight{
-	margin-left:0px ;
-	transition: .25s;
-}
-.fixed {
-    position: fixed;
-    top: 0
-}
-.nav li a:link.active {
-	font-weight:bold;
-	font-size:26px;
-}
+	.pushBodyLeft .containerBodyWithoutSS {
+		width: auto;
+	    -webkit-transition: left 250ms ease;
+	    -moz-transition: left 250ms ease;
+	    -o-transition: left 250ms ease;
+	    transition: left 250ms ease;
+	}
+	
+	.pushBodyRight{
+		margin-left:0px ;
+		transition: .25s;
+	}
+	.fixed {
+	    position: fixed;
+	    top: 0
+	}
+	.nav li a:link.active {
+		font-weight:bold;
+		font-size:26px;
+	}
+	.vertical-sidebar .fa {
+	    width: 20px;
+	    float: left;
+	    height: 20px;
+	    font-size: 0.85em;
+	    margin-top: 5px;
+	    padding-top: 6px;
+	    text-align: center;
+	    border-radius: 3px;
+	    color: #ccc;
+	    position: absolute;
+	}
 
-.vertical-sidebar li.summarycollapse > i.down-arrow {
-	display:block;
+	.vertical-sidebar a:hover {
+	    cursor: pointer;
+	}
+	
+	.vertical-sidebar .fa:hover {
+		background-color:#ccc;
+		color:#aaa;
+		cursor: pointer;
+	}
+	
+	.vertical-sidebar li.summarycollapse > i.down-arrow {
+		display:block;
+	}
+	.summarycollapse > i.right-arrow{
+		display:none;
+	}
+	.summarycollapse > ul > li, .summarycollapse > ul > li > ul > li {
+		display:block;
+	}
+	.vertical-sidebar > ul > li > ul > li, .vertical-sidebar > ul > li > ul > li > ul > li  {
+		display:none;	
+	}
+	
+	.vertical-sidebar li.summarycollapse > ul > li {
+		display:block;
+	}
+	i.right-arrow{
+		display:block;
+	}
+	i.down-arrow{
+		display:none;
+	}
 }
-.summarycollapse > i.right-arrow{
-	display:none;
-}
-.summarycollapse > ul > li, .summarycollapse > ul > li > ul > li {
-	display:block;
-}
-.vertical-sidebar > ul > li > ul > li, .vertical-sidebar > ul > li > ul > li > ul > li  {
-	display:none;	
-}
-
-.vertical-sidebar li.summarycollapse > ul > li {
-	display:block;
-}
-i.right-arrow{
-	display:block;
-}
-
-.buttonCloseNav {
-    display:none;
-    margin-left: auto;
-    position: fixed;
-    top: 0;
-    color: black;
-    font-size: 1.6em;
-    padding: 9.5px 15px;
-    z-index: 10;
-}
-
-@media (max-width: 600px) {
-
-nav.p-navbar {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-}
-
-.SideSummary,
-.SideSummary.hookMenuTop {
-    margin-top: 0px;
-    top: 54px;
-}
-
-nav.p-navbar #p-logo {
-    text-align: center;
-}
-
-.buttonOpen.hookButtonOpenTop,
-.buttonOpen {
-    margin-top: 0px;
-    position: fixed;
-    top: 0;
-    color: #fff;
-    font-size: 1.5em;
-    padding: 10px 15px;
-}
-
-.firstHeading {
-    margin-top: 90px;
-}
-
-#PushOverlay.active {
-    overscroll-behavior: none;
-}
-
-.positionFixed {
-    position:fixed;
-    width:100%;
-}
+@media (max-width: 768px) {
+	.PushOverlay {
+	    transition: opacity 1s;
+	    opacity: 1;
+	    height: 100%;
+	    width: 100%;
+	    position: fixed;
+	    z-index: 1;
+	    top: 0px;
+	    left: 0;
+	    background-color: rgba(0,0,0, 0.9);
+	    text-align: center;
+	    opacity: 0.8;
+	    transition: opacity 0.25s;
+	}
+	.vertical-sidebar {
+		padding-top:30px;
+	}
+	nav.p-navbar {
+		position:fixed;
+	    left: 0;
+	    right: 0;
+	    top: 0;
+	}
+	
+	nav.p-navbar #p-logo {
+	    text-align: center;
+	}
+	
+	.buttonOpen.hookButtonOpenTop,
+	.buttonOpen {
+	    margin-top: 0px;
+	    position: fixed;
+	    top: 0;
+	    color: #fff;
+	    font-size: 1.5em;
+	    padding: 10px 15px;
+	}
+	
+	.firstHeading {
+	    margin-top: 90px;
+	}
+	
+	.positionFixed {
+	    position:fixed;
+	}
 }

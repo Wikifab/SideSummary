@@ -10,3 +10,26 @@
     border-right: 1px solid #ccc;
     transition: width .25s;
 }
+
+.closebtn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 22px;
+    margin-left: 0px;
+    color: #ccc;
+    transition: 0.2s;
+    padding: 0 12px;
+}
+
+.openNav {
+    float: left;
+    transition: .2s;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 6px 10px;
+    border-radius: 3px;
+    margin-left: 15px;
+    margin-top: -66px;
+    position: absolute;
+}
