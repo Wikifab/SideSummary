@@ -332,7 +332,6 @@ nav.p-navbar {
 .SideSummary,
 .SideSummary.hookMenuTop {
     margin-top: 0px;
-    position: fixed;
     top: 54px;
 }
 
@@ -358,8 +357,8 @@ nav.p-navbar #p-logo {
     overscroll-behavior: none;
 }
 
-.containerBodyWithoutSS.noScroll {
-    overflow: hidden;
-    position: fixed;
+.positionFixed {
+    position:fixed;
+    width:100%;
 }
 }

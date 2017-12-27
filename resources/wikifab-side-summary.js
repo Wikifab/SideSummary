@@ -11,16 +11,18 @@
 			//Quand on est à moins de 600px (portables)                
 			if (window.matchMedia("(max-width: 600px)").matches) {
 				$('.buttonCloseNav').show();
+				
 
 				$('.SideSummary').css('width', '80%');
 				$('.buttonOpen').hide();
-				$('.containerBodyWithoutSS').addClass("noScroll");
+				$('.containerBodyWithoutSS').addClass("positionFixed");
 				//$('#PushOverlay').addClass("active");
 				// Bouton pour ouvrir le menu avec un effet de push sur la droite 
 				$('.buttonOpen').click(function(){
 					$('.SideSummary').css('width', '80%');
 					$('.buttonOpen').hide();
-					$('.containerBodyWithoutSS').addClass("noScroll");
+					$('.containerBodyWithoutSS').addClass("positionFixed");
+					$('.containerBodyWithoutSS').removeClass("pushBodyLeft");
 					//$('#PushOverlay').addClass("active");
 					$('.buttonCloseNav').show();
 				});
@@ -28,9 +30,9 @@
 				$('.buttonCloseNav').click(function(){
 					$('.buttonOpen').show();
 					$('.SideSummary').css('width', '0px');
+					$('.containerBodyWithoutSS').removeClass("positionFixed");
 					$('.containerBodyWithoutSS').removeClass("pushBodyLeft");
-					$('.containerBodyWithoutSS').addClass("pushBodyRight");
-					$('.containerBodyWithoutSS').removeClass("noScroll");
+					$('.containerBodyWithoutSS').removeClass("pushBodyRight");
 					$('.buttonCloseNav').hide();
 
 				});
@@ -39,8 +41,6 @@
 				$('#PushOverlay').click(function(){ // Ou qu'on appuie sur le boutonCloseNav !!!
 					$('.buttonCloseNav').hide();
 					$('.SideSummary').css('width', '0px');
-					$('.containerBodyWithoutSS').removeClass("pushBodyLeft");
-					$('.containerBodyWithoutSS').addClass("pushBodyRight");
 					$('.buttonOpen').show();
 					$('#PushOverlay').removeClass("active");
 				});
@@ -89,23 +89,23 @@
 			}
 		
 		else {
-			// De base le menu est fermé 
-			$('.buttonClose').click(function(){
-			$('.buttonOpen').show();
-			$('.SideSummary').css('width', '0px');
-			$('.containerBodyWithoutSS').addClass("pushBodyRight");
-			$('.containerBodyWithoutSS').removeClass("pushBodyLeft");
-			
-			});
-		
-			$('.buttonOpen').click(function(){
-				$('.buttonClose').show();
-				$('.buttonOpen').hide();
-				$('.SideSummary').css('width', '250px');
-				$('.containerBodyWithoutSS').addClass("pushBodyLeft");
-				$('.containerBodyWithoutSS').removeClass("pushBodyRight");
-			});
-				
+//			// De base le menu est fermé 
+//			$('.buttonClose').click(function(){
+//			$('.buttonOpen').show();
+//			$('.SideSummary').css('width', '0px');
+//			$('.containerBodyWithoutSS').addClass("pushBodyRight");
+//			$('.containerBodyWithoutSS').removeClass("pushBodyLeft");
+//			
+//			});
+//		
+//			$('.buttonOpen').click(function(){
+//				$('.buttonClose').show();
+//				$('.buttonOpen').hide();
+//				$('.SideSummary').css('width', '250px');
+//				$('.containerBodyWithoutSS').addClass("pushBodyLeft");
+//				$('.containerBodyWithoutSS').removeClass("pushBodyRight");
+//			});
+//				
 		}
 			
 		// Permet de faire fonctionner le système des flèches avec les sous-menus (avec tous les tailles d'écran)
@@ -128,46 +128,6 @@
 		});
 	}
 
-//			
-//			//Bouton pour fermer le menu avec buttonClose
-//			$('.buttonClose').click(function(){
-//				$('.buttonClose').hide();
-//				$('.SideSummary').css('width', '0px');
-//				$('.containerBodyWithoutSS').removeClass("pushBodyLeft");
-//				$('.containerBodyWithoutSS').addClass("pushBodyRight");
-//				$('.buttonOpen').show();
-//				$('.containerBodyWithoutSS').removeClass("noScroll");
-//			});
-//
-//			//Bouton pour fermer le menu avec buttonCloseNav
-//			$('.buttonCloseNav').click(function(){
-//				$('.buttonCloseNav').hide();
-//				$('.sidePageSummary').css('width', '0px');
-//				$('.SideSummary').css('width', '0px');
-//				$('.containerBodyWithoutSS').removeClass("pushBodyLeft");
-//				$('.containerBodyWithoutSS').addClass("pushBodyRight");
-//				$('.buttonOpen').show();
-//				$('#PushOverlay').removeClass("active");
-//				$('.containerBodyWithoutSS').removeClass("noScroll");
-//				$('.containerBodyWithoutSS').css('top', 'auto');			
-//
-//			});
-//
-//			
-//
-
-//			
-//			
-//			// Si l'écran est plus grand que 1200px on affiche directement le menu
-//			if(window.matchMedia("(min-width: 1200px)").matches){
-//				$('.buttonClose').show();
-//				$('.buttonOpen').hide();
-//				$('.SideSummary').css('width', '250px');
-//				$('.containerBodyWithoutSS').addClass("pushBodyLeft");
-//				$('.containerBodyWithoutSS').removeClass("pushBodyRight");
-//			}
-
-//		
 	});		
 		
 		
