@@ -1,0 +1,12 @@
+.sidePageSummary{
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+    padding-top: 75px;
+    border-right: 1px solid #ccc;
+    transition: width .25s;
+}

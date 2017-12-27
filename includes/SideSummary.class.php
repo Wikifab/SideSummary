@@ -45,9 +45,9 @@ class SideSummary {
         }
         $content_navigation ["SideSummary"]=array (
             "summary" => array (
-                    "name" => wfMessage(self::$summaryName),
-                    "redundant"=>true
-             )
+                "name" => wfMessage(self::$summaryName),
+                "redundant"=>true
+            )
         );
 
 
@@ -84,4 +84,3 @@ class SideSummary {
 }
 
 ?>
-

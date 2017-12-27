@@ -9,12 +9,14 @@
 	"ResourceModules": {
 		"ext.sidesummary.js": {
 			"scripts": [
-				"resources/wikifab-side-summary.js"
+				"resources/wikifab-side-summary.js",
+				"resources/wikifab-side-page-summary.js"				
 			]
 		},
 		"ext.sidesummary.css": {
 			"styles": [
-				"resources/wikifab-side-summary.css"
+				"resources/wikifab-side-summary.css",
+				"resources/wikifab-side-page-summary.css"			
 			]
 		}
 	},

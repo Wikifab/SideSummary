@@ -21,6 +21,7 @@ class SideSummary extends Component {
         }
         $ret =$this->indent(). " <span class=\"buttonOpen\"> <i class=\"fa fa-bars\"> </i></span>";
         $ret .=$this->indent() . "<span class=\"buttonClose\" ><i class=\"fa fa-times\"></i></span>";
+        $ret .=$this->indent() . "<span class=\"buttonCloseNav\" ><i class=\"fa fa-times\"></i></span>";
 
         $ret .= $this->indent() . '<div class="SideSummary">';
         $this->indent(+1);
