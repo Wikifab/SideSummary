@@ -166,10 +166,10 @@ div.SideSummary + div.container #bodyContent {
 
 
 
-.action-edit.containerBodyWithoutSS #p-logo img,
-.action-history.containerBodyWithoutSS #p-logo img,
-.action-delete.containerBodyWithoutSS #p-logo img,
-.action-protect.containerBodyWithoutSS #p-logo img {
+.action-edit.containerBodyWithoutSS.HasSideSummary #p-logo img,
+.action-history.containerBodyWithoutSS.HasSideSummary #p-logo img,
+.action-delete.containerBodyWithoutSS.HasSideSummary #p-logo img,
+.action-protect.containerBodyWithoutSS.HasSideSummary #p-logo img {
     margin-left: 0px;
 }
 
@@ -186,7 +186,7 @@ div.SideSummary + div.container #bodyContent {
 	    z-index: 10;
 	}
 
-	.pushBodyLeft .containerBodyWithoutSS {
+	.pushBodyLeft .containerBodyWithoutSS.HasSideSummary {
 		width: auto;
 	    -webkit-transition: left 250ms ease;
 	    -moz-transition: left 250ms ease;
@@ -253,7 +253,7 @@ div.SideSummary + div.container #bodyContent {
 	}
 }
 @media (max-width: 768px) {
-	.PushOverlay {
+	.PushOverlay.active {
 	    transition: opacity 1s;
 	    opacity: 1;
 	    height: 100%;
