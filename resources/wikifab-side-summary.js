@@ -65,11 +65,15 @@
 					var scroll = $(window).scrollTop();
 					if (scroll >= 54) {		    	
 				        $('.SideSummary').addClass('hookMenuTop');
-				        $('.buttonOpen').addClass('hookButtonOpenTop');
+				        $('.buttonOpen').addClass('hookButtonTop');
+				        $('.buttonClose').addClass('hookButtonTop');
+
 					}
 					else {
 						$('.SideSummary').removeClass('hookMenuTop');
-						$('.buttonOpen').removeClass('hookButtonOpenTop');
+						$('.buttonOpen').removeClass('hookButtonTop');
+						$('.buttonClose').removeClass('hookButtonTop');
+
 					}
 				});
 				

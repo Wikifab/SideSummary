@@ -144,13 +144,7 @@
     z-index: 10;
     transition: opacity 0.2s;
 }
-.buttonOpen.hookButtonOpenTop {
-    margin-top: 0px;
-    position: fixed;
-    top: 0;
-}
-
-.buttonOpen.hookButtonCloseTop {
+.hookButtonTop {
     margin-top: 0px;
     position: fixed;
     top: 0;
@@ -180,7 +174,9 @@ div.SideSummary + div.container #bodyContent {
 }
 
 @media (min-width: 769px) {
-
+	.SideSummary {
+		margin-top:-20px;
+	}
 	.pushBodyLeft  {
 	    margin-left: 250px;
 	    width: calc(100% - 250px);
@@ -271,9 +267,7 @@ div.SideSummary + div.container #bodyContent {
 	    opacity: 0.8;
 	    transition: opacity 0.25s;
 	}
-	.vertical-sidebar {
-		padding-top:30px;
-	}
+
 	nav.p-navbar {
 		position:fixed;
 	    left: 0;
