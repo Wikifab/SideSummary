@@ -1,35 +1,40 @@
 .sidePageSummary{
     height: 100%;
-    width: 0px;
-    position: fixed;
-    top: 0;
-    left: 0;
+    width: 269px;
     background-color: #f8f8f8;
-    overflow-x: hidden;
-    padding-top: 75px;
+    padding-top: 20px 20px;
     border-right: 1px solid #ccc;
-    transition: width .25s;
+    float : left;
+    position : absolute;
+    z-index:10;
+    bottom:auto;
+}
+.sidePageSummary .toc {
+	padding:20px;
+}
+.hookMenu {
+    margin-top: 0px;
+    position: fixed;
+    top:0;
+}
+.AlwaysSeeMenu {
+	top:auto;
+	bottom:0px;
+	height:auto;
 }
 
-.closebtn {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    font-size: 22px;
-    margin-left: 0px;
-    color: #ccc;
-    transition: 0.2s;
-    padding: 0 12px;
+.bodyPushWhenSidePage {
+	float:left;
+	margin-left : 299px;	
 }
 
-.openNav {
-    float: left;
-    transition: .2s;
-    background: #fff;
-    border: 1px solid #eee;
-    padding: 6px 10px;
-    border-radius: 3px;
-    margin-left: 15px;
-    margin-top: -66px;
-    position: absolute;
+.FixedPosition{
+	position:fixed;
+}
+.bodyPushBottom {
+	margin-left:0px;
+}
+.verticalMobile {
+	height:auto;
+	position:relative;
 }

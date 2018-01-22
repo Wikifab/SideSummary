@@ -29,11 +29,9 @@ class SideSummary {
         if ((!$param1)){
             $param1 = '__TOC__';
         }
-        $out ="<div class=\"vertical-sidebar sidePageSummary\">\n";
+        $out ="<div class=\"vertical-sidebar-page sidePageSummary\">\n";
         $out .= $param1;
-        $out .=" \n <span class=\"closebtn\" >x</span>";
         $out .= "</div>";
-        $out .=" <span class=\"openNav\"> <i class=\"fa fa-bars\"> </i></span>";
 
         return array( $out, 'noparse' => false );
 

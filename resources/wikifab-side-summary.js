@@ -23,7 +23,6 @@
 					$('.buttonOpen').hide();
 					$('.HasSideSummary').addClass("positionFixed");
 					$('.PushOverlay').addClass("active");
-					console.log("after" + positionPX);
 
 				
 				});

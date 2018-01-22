@@ -1,65 +1,67 @@
 (function() {
 	
 	$(document).ready(function() {
+		
 		// Seulemnent pour sidePageSummary
-	
 		if($('.sidePageSummary').length > 0 ){
 			
-			// Bouton pour ouvrir le menu avec un effet de push sur la droite 
-			$('.openNav').click(function(){
-				$('.closebtn').show();
-				if (window.matchMedia("(max-width: 600px)").matches) {
-					$('.sidePageSummary').css('width', '80%');
-					$('#PushOverlay').addClass("active");
-				}
-				$('.sidePageSummary').css('width', '250px');
-				$('body').addClass("pushBodyLeft");
-				$('body').removeClass("pushBodyRight");
+			// Permet de mettre toute la div entre le header et le body
+			$('.vertical-sidebar-page').insertBefore("#bodyContent");
+		
+			//Quand on est à moins de 992px 				
+			if (window.matchMedia("(max-width: 992px)").matches) {
+				$('.sidePageSummary').css('width', '100%');
+				$('#bodyContent').addClass('bodyPushBottom');
+				$('.sidePageSummary').addClass('verticalMobile');
+				$('#firstHeading').css('margin-top','20px');
 				
-				$('.openNav').hide();
+			}
+			if (window.matchMedia("(min-width: 993px)").matches) {
 
-			
-			});
-			
-			
-			//Bouton pour fermer le menu
-			$('.closebtn').click(function(){
-				$('.sidePageSummary').css('width', '0px');
-				$('body').removeClass("pushBodyLeft");
-				$('body').addClass("pushBodyRight");
-				$('.openNav').show();
-			});
-			
-			// Quand on scroll sur la page on fixe le bouton du menu en haut de la page et le menu
-			$(window).scroll(function() {    
+				$('#bodyContent').addClass('bodyPushWhenSidePage');
 
-			    var scroll = $(window).scrollTop();
-
-			    if (scroll >= 52) {
-			    	
-			        $(".openNav").addClass("positionChanged");
-			        $('.vertical-sidebar').addClass('hookMenu');
-			    }
-			    else {
-			    	$(".openNav").removeClass("positionChanged");
-			        $('.vertical-sidebar').removeClass('hookMenu');
-
-			    }
-			});
-			// Permet de suivre avec le menu là où on en est dans la page 
-			$('body').attr("data-spy","scroll");
-			$('body').attr("data-target","#toc");
-			$('body').attr("data-offset","20");
-			
-			$('#toc ul').addClass("nav nav-pills nav-stacked");
-		}
-		
-
-		
-	});
+				// Quand on scroll sur la page on fixe le bouton du menu en haut de la page et le menu
+				$(window).scroll(function() {    
 	
+				    var scroll = $(window).scrollTop();
+				    if (scroll >= 210) {			    	
+				    	$('.sidePageSummary').addClass('hookMenu');
+				    	$('.sidePageSummary').removeClass('AlwaysSeeMenu');
+
+				    }			   			   			    
+				    else {
+				    	$('.sidePageSummary').removeClass('hookMenu');
+				    }
+				});
+
+				// Quand on scroll et qu'on arrive à l'élément footer, on remet la position absolute. 
+				$(window).scroll(function() {
+				  var hT = $('.footerdata').offset().top;
+				  console.log(hT);
+				  var hH = $('.footerdata').outerHeight() - 110;
+				  console.log('hello' + hH);
+				  var wH = $(window).height();
+				  console.log('ho'+ wH);
+				  var wS = $(this).scrollTop();
+			      if (wS > hT+hH-wH){
+			    	  $('.sidePageSummary').removeClass('hookMenu');
+			    	  $('.sidePageSummary').addClass('AlwaysSeeMenu');
+				   }
+				});
+				
+				// Permet de suivre avec le menu là où on en est dans la page 
+				$('body').attr("data-spy","scroll");
+				$('body').attr("data-target","#toc");
+				$('body').attr("data-offset","20");
+				
+				$('#toc ul').addClass("nav nav-pills nav-stacked");
+			}
+					
+		}
+	});
+//	
 })();
 	
 	
 	
-	
+//	
