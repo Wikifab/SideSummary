@@ -35,6 +35,7 @@
 		"ParserFirstCallInit": [
 			"SideSummary\\SideSummary::onParserSetup"
 		],
+		"ArticleAfterFetchContentObject": "SideSummary\\SideSummary::onArticleAfterFetchContentObject",
 		"BeforePageDisplay": [
 			"SideSummary\\SideSummary::onBeforePageDisplay"
 		],

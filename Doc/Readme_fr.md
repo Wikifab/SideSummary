@@ -25,10 +25,20 @@ vous devez ajouter la ligne suivante dans votre page (ou dans le modèle utilis�
 	{{#sideSummary:{{__TOC__}}}}
 
 
+### Menu sur  chaque page d'un namespace
+
+Il est possible d'activer le sommaire sur toutes les pages d'un namespace en configurant la variable $wgSidePageSummaryNamespace dans LocalSettings.php avec le liste de ids de namespaces à activer.
+Exemple :
+
+	$wgSidePageSummaryNamespace = [
+		NS_MAIN,
+		NS_PROJECT,
+	];
+
 ### Plan du site sur chaque page sous forme de menu
 Il faut tout d'abord ajouter un composant dans le layout là où vous mettez le menu :
 
-	<component type="SideSummary"> 
+	<component type="SideSummary">
 	</component>
 	
 Ensuite vous créez une page Mediawiki:NomDeLaPage avec du contenu wikitext en liste à puce qui représente le plan du site . Chaque item est le nom d'une page existante. 
@@ -48,6 +58,5 @@ Ensuite vous créez une page Mediawiki:NomDeLaPage avec du contenu wikitext en l
 Ensuite en début de chaque page qui doit posséder ce menu sur le côté vous devez mettre :
 
 	{{#sideSummary:NomDeLaPageMediawiki}}
-	
 	
 

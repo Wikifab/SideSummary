@@ -20,6 +20,16 @@ If you want a page summary which contains titles and subtitles parts and follows
 
 	{{#sidePageSummary: __TOC__ }}
 
+### add summary for a whole namespace
+
+It is possible to add summary for all pages of a namespace by setting the config var $wgSidePageSummaryNamespace in LocalSettings.php with the list of namespace ids to enable.
+Example :
+
+	$wgSidePageSummaryNamespace = [
+		NS_MAIN,
+		NS_PROJECT,
+	];
+
 
 ### Website map 
 On the other hand, if you need a kind of map for your website you can use this summary. 
