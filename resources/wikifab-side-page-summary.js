@@ -36,23 +36,25 @@
 
 				// Quand on scroll et qu'on arrive à l'élément footer, on remet la position absolute. 
 				$(window).scroll(function() {
-				  var hT = $('.footerdata').offset().top;
-				  console.log(hT);
-				  var hH = $('.footerdata').outerHeight() - 110;
-				  console.log('hello' + hH);
-				  var wH = $(window).height();
-				  console.log('ho'+ wH);
-				  var wS = $(this).scrollTop();
-			      if (wS > hT+hH-wH){
-			    	  $('.sidePageSummary').removeClass('hookMenu');
-			    	  $('.sidePageSummary').addClass('AlwaysSeeMenu');
-				   }
+					if ($('.footerdata')) {
+						  var hT = $('.footerdata').offset().top;
+						  var hH = $('.footerdata').outerHeight() - 110;
+						  var wH = $(window).height();
+						  var wS = $(this).scrollTop();
+					      if (wS > hT+hH-wH){
+					    	  $('.sidePageSummary').removeClass('hookMenu');
+					    	  $('.sidePageSummary').addClass('AlwaysSeeMenu');
+						   }
+					}
 				});
 				
 				// Permet de suivre avec le menu là où on en est dans la page 
-				$('body').attr("data-spy","scroll");
-				$('body').attr("data-target","#toc");
 				$('body').attr("data-offset","20");
+				$('body').scrollspy({target: "#toc"});
+				//$('body').css("position","relative");
+				//$('body').attr("data-spy","scroll");
+				//$('body').attr("data-target","#toc");
+				//$('body').attr("data-offset","20");
 				
 				$('#toc ul').addClass("nav nav-pills nav-stacked");
 			}

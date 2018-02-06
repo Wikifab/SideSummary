@@ -113,6 +113,8 @@ class SideSummary {
 			self::$summaryName = $matches[1];
 
 		}
+
+		var_dump($out->getHTML());
 	}
 }
 
