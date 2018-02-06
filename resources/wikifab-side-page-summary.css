@@ -28,6 +28,10 @@
 	margin-left : 299px;	
 }
 
+.bodyPushWhenSidePage #toc {
+    display: none;
+}
+
 .FixedPosition{
 	position:fixed;
 }
