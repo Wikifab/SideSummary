@@ -49,6 +49,7 @@
 				});
 				
 				// Permet de suivre avec le menu là où on en est dans la page 
+				$('body').css('position', 'relative');
 				$('body').attr("data-offset","20");
 				$('body').scrollspy({target: "#toc"});
 				//$('body').css("position","relative");
