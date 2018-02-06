@@ -36,9 +36,9 @@
 
 				// Quand on scroll et qu'on arrive à l'élément footer, on remet la position absolute. 
 				$(window).scroll(function() {
-					if ($('.footerdata').length) {
-						  var hT = $('.footerdata').offset().top;
-						  var hH = $('.footerdata').outerHeight() - 110;
+					if ($('.footer-main').length) {
+						  var hT = $('.footer-main').offset().top;
+						  var hH = $('.footer-main').outerHeight() - 110;
 						  var wH = $(window).height();
 						  var wS = $(this).scrollTop();
 					      if (wS > hT+hH-wH){

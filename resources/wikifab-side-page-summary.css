@@ -38,3 +38,11 @@
 	height:auto;
 	position:relative;
 }
+
+.ve-activated .sidePageSummary {
+    display:none;
+}
+
+.ve-activated .bodyPushWhenSidePage {
+    margin-left: -1.5em;
+}
