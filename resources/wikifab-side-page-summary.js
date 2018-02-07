@@ -46,6 +46,7 @@
 					    	  $('.sidePageSummary').addClass('AlwaysSeeMenu');
 						   }
 					}
+
 				});
 				
 				// Permet de suivre avec le menu là où on en est dans la page 
