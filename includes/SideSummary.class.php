@@ -22,7 +22,7 @@ class SideSummary {
 	 */
 	public static function onArticleAfterFetchContentObject( &$article, \Content &$content = null ) {
 		global $wgSidePageSummaryNamespace;
-		if (! isset($wgSidePageSummaryNamespace) && $wgSidePageSummaryNamespace) {
+		if (! isset($wgSidePageSummaryNamespace) || !  $wgSidePageSummaryNamespace) {
 			return;
 		}
 
