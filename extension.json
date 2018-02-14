@@ -9,8 +9,10 @@
 	"ResourceModules": {
 		"ext.sidesummary.js": {
 			"scripts": [
+				"resources/mwscrollspy.js",
 				"resources/wikifab-side-summary.js",
-				"resources/wikifab-side-page-summary.js"				
+				"resources/wikifab-side-page-summary.js",
+				"resources/fixed-side-summary.js"
 			]
 		},
 		"ext.sidesummary.css": {

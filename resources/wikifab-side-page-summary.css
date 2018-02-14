@@ -50,3 +50,8 @@
 .ve-activated .bodyPushWhenSidePage {
     margin-left: -1.5em;
 }
+
+.ss-fixed-top{
+	position:fixed;
+    top:0;
+}

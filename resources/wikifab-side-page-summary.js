@@ -73,6 +73,8 @@
 				$('body').attr("data-target","#toc");
 				$('body').attr("data-offset","20");
 				
+				$('body').mwscrollspy({target: "#toc"});
+				
 				$('#toc ul').addClass("nav nav-pills nav-stacked");
 			}
 					
