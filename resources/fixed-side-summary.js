@@ -34,8 +34,6 @@ $(document).ready(function() {
 		H = $(document).height();
 		h = $('.fixedSideSummary').height() ;
 
-		$('.fixedSideSummary #toc ul').addClass('nav');
-
         $('.fixedSideSummary').addClass('ss-unfixed');
 
 		initialPosition = $('.fixedSideSummary').offset().top;
