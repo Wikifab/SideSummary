@@ -56,6 +56,5 @@
     top:0;
 }
 .ss-fixed-bottom {
-	position:fixed;
-    bottom:0;
+	position:absolute;
 }
