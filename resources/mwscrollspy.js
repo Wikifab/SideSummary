@@ -109,23 +109,18 @@
     
     var targetEscaped = this.escapeId(target);
 
-    console.log('active target');
-    console.log(target);
-
     var selector = this.selector +
       '[data-target="' + target + '"],' +
-      this.selector + '[href="' + target + '"]'
-     
-    console.log(selector);
+      this.selector + '[href="' + target + '"]';
 
     var active = $(selector)
       .parents('li')
-      .addClass('active')
+      .addClass('active');
 
     if (active.parent('.dropdown-menu').length) {
       active = active
         .closest('li.dropdown')
-        .addClass('active')
+        .addClass('active');
     }
 
     active.trigger('activate.bs.scrollspy')
