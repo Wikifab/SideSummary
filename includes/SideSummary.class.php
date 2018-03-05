@@ -11,6 +11,7 @@ class SideSummary {
 		// Create a function hook associating the "example" magic word with renderExample()
 		$parser->setFunctionHook( 'sideSummary', 'SideSummary\\SideSummary::renderSideSummary' );
 		$parser->setFunctionHook( 'sidePageSummary', 'SideSummary\\SideSummary::renderSidePageSummary' );
+		$parser->setFunctionHook( 'forceShowToc', 'SideSummary\\SideSummary::forceShowToc' );
 
 	}
 
@@ -41,6 +42,12 @@ class SideSummary {
 		if ( $title->getNamespace() != -1 && in_array($title->getNamespace(), $wgSidePageSummaryNamespace)) {
 			$content = new \WikitextContent('{{#sidePageSummary: __TOC__ }}' . $text);
 		}
+
+	}
+
+	public static function forceShowToc(\Parser $parser) {
+
+		$parser->getOutput()->addModules('ext.sidesummary.forceshowtoc.js');
 
 	}
 

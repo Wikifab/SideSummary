@@ -7,6 +7,11 @@
 	"license-name": "GPL-2.0+",
 	"type": "parserhook",
 	"ResourceModules": {
+		"ext.sidesummary.forceshowtoc.js": {
+			"scripts": [
+				"resources/mediawiki.toc.forceshow.js"
+			]
+		},
 		"ext.sidesummary.js": {
 			"scripts": [
 				"resources/mwscrollspy.js",

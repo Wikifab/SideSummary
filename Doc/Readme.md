@@ -57,4 +57,6 @@ After that, at the beggining of each page add this line, the summary will appear
 	{{#sideSummary:NomDeLaPageMediawiki}}
 	
 	
+### force displaing toc
 
+in mediawiki, toc can by hide/show with a link. To remove this behaviour on some specifics pages and force the toc to be visible, just add {{#forceShowToc:}} on thoses pages (you still need to include TOC with __TOC__)
