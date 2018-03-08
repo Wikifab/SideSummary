@@ -60,6 +60,10 @@ class SideSummary {
 			$isRecursion = false;
 		}
 		self::$summaryName = $param1;
+
+		$parser->getOutput()->addModules('ext.sidesummary.js');
+		$parser->getOutput()->addModuleStyles('ext.sidesummary.css');
+
 		return '' ;
 
 	}
@@ -70,6 +74,10 @@ class SideSummary {
 		$out ="<div class=\"vertical-sidebar-page sidePageSummary\">\n";
 		$out .= $param1;
 		$out .= "</div>";
+
+
+		$parser->getOutput()->addModules('ext.sidesummary.js');
+		$parser->getOutput()->addModuleStyles('ext.sidesummary.css');
 
 		return array( $out, 'noparse' => false );
 
@@ -95,8 +103,6 @@ class SideSummary {
 	}
 	public static function onBeforePageDisplay( \OutputPage &$out, \Skin &$skin ) {
 
-		$out->addModules('ext.sidesummary.js');
-		$out->addModuleStyles('ext.sidesummary.css');
 
 		$title = $out->getTitle();
 		if(!$title || $title->getNamespace() < 0 ){
@@ -118,6 +124,10 @@ class SideSummary {
 		$pattern = "{{\#sideSummary:\s+([a-zA-Z]+)\s+}}";
 		if (preg_match($pattern, $contentData, $matches)){
 			self::$summaryName = $matches[1];
+
+
+			$out->addModules('ext.sidesummary.js');
+			$out->addModuleStyles('ext.sidesummary.css');
 
 		}
 	}
