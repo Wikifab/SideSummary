@@ -90,7 +90,6 @@ class SideSummary {
 	public static function onSkinTemplateNavigation(\SkinTemplate  &$skin, &$content_navigation ) {
 
 
-
 		if (!(self::$summaryName)){
 			return true;
 		}
@@ -125,6 +124,19 @@ class SideSummary {
 		if(!($contentData)){
 			return true;
 		}
+		if ( !  $out->getOutput() || !  $out->getOutput()->getRequest()) {
+			return true;
+		}
+		if ($out->getOutput()->getRequest()->getValues('action')) {
+			// display sidesummary only on page view (not edit or history, ...)
+			return true;
+		}
+		if ($out->getOutput()->getRequest()->getValues('veaction')) {
+			// display sidesummary only on page view (not on action = visual editor)
+			return true;
+		}
+
+
 		$pattern = "{{\#sideSummary:\s+([a-zA-Z]+)\s+}}";
 		if (preg_match($pattern, $contentData, $matches)){
 			self::$summaryName = $matches[1];
