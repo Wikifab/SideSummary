@@ -2,6 +2,9 @@
 
 namespace SideSummary;
 
+use OutputPage;
+use ParserOutput;
+
 class SideSummary {
 	static $summaryName;
 	// Register any render callbacks with the parser
@@ -60,11 +63,8 @@ class SideSummary {
 			$isRecursion = false;
 		}
 		self::$summaryName = $param1;
-
-		// TODO : we have to disable cache,
-		// because if cache enabled, this function isn't call at each time,
-		// and then  self::$summaryName is not set
-		$parser->disableCache();
+		// to ensure this data is retreived when using cache, we add it to parserOutput
+		$parser->getOutput()->setExtensionData( 'SideSummaryName', $param1 );
 
 		$parser->getOutput()->addModules('ext.sidesummary.js');
 		$parser->getOutput()->addModuleStyles('ext.sidesummary.css');
@@ -87,8 +87,16 @@ class SideSummary {
 
 	}
 
-	public static function onSkinTemplateNavigation(\SkinTemplate  &$skin, &$content_navigation ) {
+	public static function onOutputPageParserOutput( OutputPage &$out, ParserOutput $parseroutput ) {
 
+		// retreive data when parserOutput is read from cache :
+		$summaryName = $parseroutput->getExtensionData( 'SideSummaryName' );
+		if( $summaryName) {
+			self::$summaryName = $summaryName;
+		}
+	}
+
+	public static function onSkinTemplateNavigation(\SkinTemplate  &$skin, &$content_navigation ) {
 
 		if (!(self::$summaryName)){
 			return true;

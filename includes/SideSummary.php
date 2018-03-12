@@ -1,9 +1,6 @@
 <?php
 namespace Skins\Chameleon\Components;
 
-use MWNamespace;
-use Skins\Chameleon\ChameleonTemplate;
-use Skins\Chameleon\IdRegistry;
 
 class SideSummary extends Component {
 
