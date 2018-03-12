@@ -61,6 +61,11 @@ class SideSummary {
 		}
 		self::$summaryName = $param1;
 
+		// TODO : we have to disable cache,
+		// because if cache enabled, this function isn't call at each time,
+		// and then  self::$summaryName is not set
+		$parser->disableCache();
+
 		$parser->getOutput()->addModules('ext.sidesummary.js');
 		$parser->getOutput()->addModuleStyles('ext.sidesummary.css');
 
@@ -74,7 +79,6 @@ class SideSummary {
 		$out ="<div class=\"vertical-sidebar-page sidePageSummary\">\n";
 		$out .= $param1;
 		$out .= "</div>";
-
 
 		$parser->getOutput()->addModules('ext.sidesummary.js');
 		$parser->getOutput()->addModuleStyles('ext.sidesummary.css');
