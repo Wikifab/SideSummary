@@ -5,7 +5,7 @@
 	background-color: #f8f8f8;
     overflow-x: hidden;
     border-right: 1px solid #ccc;
-    z-index: 100;
+    z-index: 10;
     height:100%;
     padding-top:15px;
     transition: width .25s;
@@ -82,37 +82,6 @@
 	list-style: none;
 }
 
-.action-edit .buttonOpen,
-.action-edit .buttonClose,
-.action-edit .SideSummary,
-.action-history .buttonOpen,
-.action-history .buttonClose,
-.action-history .SideSummary,
-.action-delete .buttonOpen,
-.action-delete .buttonClose,
-.action-delete .SideSummary,
-.action-protect .buttonOpen,
-.action-protect .buttonClose,
-.action-protect .SideSummary {
-    display: none !important;
-}
-
-.action-edit.pushBodyLeft div.SideSummary + div.container,
-.action-edit.pushBodyLeft div.footer-main .footer-info,
-.action-edit.pushBodyLeft div.footer-main .container,
-.action-history.pushBodyLeft div.SideSummary + div.container,
-.action-history.pushBodyLeft div.footer-main .footer-info,
-.action-history.pushBodyLeft div.footer-main .container,
-.action-delete.pushBodyLeft div.SideSummary + div.container,
-.action-delete.pushBodyLeft div.footer-main .footer-info,
-.action-delete.pushBodyLeft div.footer-main .container,
-.action-protect.pushBodyLeft div.SideSummary + div.container,
-.action-protect.pushBodyLeft div.footer-main .footer-info,
-.action-protect.pushBodyLeft div.footer-main .container {
-    margin-left:0px;
-    width:100%;
-}
-
 .buttonClose {
     float: left;
     transition: .2s;
@@ -162,15 +131,6 @@
 
 div.SideSummary + div.container #bodyContent {
     min-height: 300px;
-}
-
-
-
-.action-edit.containerBodyWithoutSS.HasSideSummary #p-logo img,
-.action-history.containerBodyWithoutSS.HasSideSummary #p-logo img,
-.action-delete.containerBodyWithoutSS.HasSideSummary #p-logo img,
-.action-protect.containerBodyWithoutSS.HasSideSummary #p-logo img {
-    margin-left: 0px;
 }
 
 @media (min-width: 769px) {
@@ -273,7 +233,15 @@ div.SideSummary + div.container #bodyContent {
 	    left: 0;
 	    right: 0;
 	    top: 0;
-	    z-index: 200;
+	    z-index: 1;
+	}
+
+	.mw-body {
+		padding:0px;
+	}
+
+	.containerBodyWithoutSS {
+    	padding-top: 60px;
 	}
 
 	div.wiki-nav + div {
@@ -291,6 +259,7 @@ div.SideSummary + div.container #bodyContent {
 	    top: 0;
 	    color: #fff;
 	    font-size: 1.5em;
+	    z-index: 1;
 	    padding: 10px 15px;
 	}
 	
