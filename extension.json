@@ -7,17 +7,27 @@
 	"license-name": "GPL-2.0+",
 	"type": "parserhook",
 	"ResourceModules": {
+		"ext.sidesummary.fixed.js": {
+			"scripts": [
+				"resources/mwscrollspy.js",
+				"resources/fixed-side-summary.js"
+			]
+		},
 		"ext.sidesummary.forceshowtoc.js": {
 			"scripts": [
 				"resources/mediawiki.toc.forceshow.js"
+			],
+			"dependencies": [
+				"ext.sidesummary.fixed.js"
 			]
 		},
 		"ext.sidesummary.js": {
 			"scripts": [
-				"resources/mwscrollspy.js",
 				"resources/wikifab-side-summary.js",
-				"resources/wikifab-side-page-summary.js",
-				"resources/fixed-side-summary.js"
+				"resources/wikifab-side-page-summary.js"
+			],
+			"dependencies": [
+				"ext.sidesummary.fixed.js"
 			]
 		},
 		"ext.sidesummary.css": {

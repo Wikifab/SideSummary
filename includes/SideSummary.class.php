@@ -52,6 +52,7 @@ class SideSummary {
 
 		$parser->getOutput()->addModules('ext.sidesummary.forceshowtoc.js');
 
+		$parser->getOutput()->addModuleStyles('ext.sidesummary.css');
 	}
 
 	public static function renderSideSummary(\Parser $parser, $param1) {
