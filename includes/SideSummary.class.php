@@ -64,7 +64,7 @@ class SideSummary {
 			$param1 = $parser->internalParse($param1, false);
 			$isRecursion = false;
 		}
-		self::$summaryName = $param1;
+		$parser->getOutput()->setProperty( 'SummaryName', $param1 );
 		// to ensure this data is retreived when using cache, we add it to parserOutput
 		$parser->getOutput()->setExtensionData( 'SideSummaryName', $param1 );
 
