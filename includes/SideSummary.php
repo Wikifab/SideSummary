@@ -26,8 +26,8 @@ class SideSummary extends Component {
      */
     public function getHtml() {
 
-        $contentNavigation = $this->getSkinTemplate()->data[ 'content_navigation' ];
         $summary_name = $this->getSkinTemplate()->getSkin()->getOutput()->getProperty( 'SummaryName');
+
         if(!$summary_name) {
             return '';
         }
@@ -37,7 +37,7 @@ class SideSummary extends Component {
         $ret .= $this->indent() . '<div class="SideSummary">';
         $this->indent(+1);
         $ret .= $this->indent() ."<div class=\"vertical-sidebar\">";
-        $ret .= $this->indent() . $summary_name;
+        $ret .= $this->indent() . wfMessage($summary_name);
         $ret .= $this->indent() . "</div>";
         $this->indent(-1);
         $ret .=$this->indent(). "</div>";
