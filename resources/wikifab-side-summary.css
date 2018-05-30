@@ -1,15 +1,30 @@
 .SideSummary{
-    width: 250px;
-    position: absolute;
+	width: 330px;
 	float:left;
-	background-color: #f8f8f8;
-    overflow-x: hidden;
-    border-right: 1px solid #ccc;
     z-index: 10;
-    height:100%;
-    padding-top:15px;
     transition: width .25s;
     padding-bottom:50px;
+    transition: all 0.5s ease 0s;
+}
+
+.containerBodyWithoutSS{
+	transition: width 0.5s;
+}
+
+.SideSummaryContainer{
+	width: 100%; 
+	height: 1000px;
+	background: #f8f8f8;
+	position: relative;
+}
+
+.SideSummary.bottom{
+	top: auto !important;
+	bottom: 0 !important;
+	position: absolute !important;
+	height: auto !important;
+	padding-bottom: 0;
+	transition: none;
 }
 
 .hookMenuTop {
@@ -17,6 +32,31 @@
     position: fixed;
     top:0;
 }
+
+.vertical-sidebar{
+	width: 310px;
+	background-color: #f8f8f8;
+	border-right: 1px solid #ccc;
+	float: left;
+	height: calc(100vh - 55px);
+	overflow: auto;
+	box-sizing: content-box;
+	padding-right: 50px; /* hide the scrollbar */
+}
+
+.vertical-sidebar *{
+	box-sizing: border-box;
+}
+
+.vertical-sidebar-parent{
+	overflow: hidden;
+	border-right: 1px solid #ddd;
+}
+
+.vertical-sidebar.scrolling{
+	height: 100vh;
+}
+
 
 
 .vertical-sidebar li {
@@ -41,11 +81,6 @@
     padding-left: 25px;
 }
 
-.vertical-sidebar li li a,
-.vertical-sidebar li li strong {
-    padding-left: 40px;
-}
-
 .vertical-sidebar li li li a,
 .vertical-sidebar li li li strong {
     padding-left: 55px;
@@ -57,12 +92,7 @@
 }
 
 .vertical-sidebar li .fa {
-	margin-left: 2px;
     float: left;
-}
-
-.vertical-sidebar li li .fa {
-    margin-left: 17px;
 }
 
 .vertical-sidebar li li li .fa {
@@ -102,16 +132,15 @@
 	color: #aaa;
 	cursor: pointer;
 }
-.buttonOpen
- {
-    float: left;
-    transition: .2s;
-    padding: 6px 10px;
-    border-radius: 3px;
-    margin-top: -16px;
-    position: absolute;
-    z-index: 10;
-    transition: opacity 0.2s;
+.toggle
+{
+	width: 20px;
+	border-radius: 3px;
+	z-index: 1;
+	transition: opacity 0.2s;
+	left: 0;
+	float: right;
+	text-align: center;
 }
 .hookButtonTop {
     margin-top: 0px;
@@ -120,8 +149,7 @@
 }
 
 
-.buttonOpen:hover,
-.buttonClose:hover {
+.toggle:hover{
 	cursor:pointer;
 }
 
@@ -134,12 +162,13 @@ div.SideSummary + div.container #bodyContent {
 }
 
 @media (min-width: 769px) {
-	.SideSummary {
-		margin-top:-20px;
+
+	.pushBodyLeft{
+		width: calc(100% - 330px);
 	}
-	.pushBodyLeft  {
-	    margin-left: 250px;
-	    width: calc(100% - 250px);
+
+	.pushBodyRight{
+		width: calc(100% - 20px);
 	}
 	
 	.pushBodyLeft nav {
@@ -153,11 +182,7 @@ div.SideSummary + div.container #bodyContent {
 	    -o-transition: left 250ms ease;
 	    transition: left 250ms ease;
 	}
-	
-	.pushBodyRight{
-		margin-left:0px ;
-		transition: .25s;
-	}
+
 	.fixed {
 	    position: fixed;
 	    top: 0
@@ -168,7 +193,6 @@ div.SideSummary + div.container #bodyContent {
 	}
 	.vertical-sidebar .fa {
 	    width: 20px;
-	    float: left;
 	    height: 20px;
 	    font-size: 0.85em;
 	    margin-top: 5px;
@@ -176,7 +200,14 @@ div.SideSummary + div.container #bodyContent {
 	    text-align: center;
 	    border-radius: 3px;
 	    color: #ccc;
-	    position: absolute;
+	}
+
+	.vertical-sidebar li a{
+		width: calc(100% - 20px);
+	}
+
+	.vertical-sidebar li ul{
+		padding-left: 15px;
 	}
 
 	.vertical-sidebar a:hover {
@@ -207,6 +238,7 @@ div.SideSummary + div.container #bodyContent {
 	}
 	i.right-arrow{
 		display:block;
+		float: left;
 	}
 	i.down-arrow{
 		display:none;
@@ -252,8 +284,8 @@ div.SideSummary + div.container #bodyContent {
 	    text-align: center;
 	}
 	
-	.buttonOpen.hookButtonOpenTop,
-	.buttonOpen {
+	.toggle.hookButtonOpenTop,
+	.toggle {
 	    margin-top: 0px;
 	    position: fixed;
 	    top: 0;

@@ -31,16 +31,18 @@ class SideSummary extends Component {
         if(!$summary_name) {
             return '';
         }
-        $ret =$this->indent(). " <span class=\"buttonOpen\"> <i class=\"fa fa-bars\"> </i></span>";
-        $ret .=$this->indent() . "<span class=\"buttonClose\" ><i class=\"fa fa-times\"></i></span>";
-
-        $ret .= $this->indent() . '<div class="SideSummary">';
+        $ret = $this->indent() . '<div id="SideSummary" class="SideSummary">';
+        $ret .= $this->indent(). " <span class=\"toggle active\"> <i class=\"fa fa-times\"> </i></span>";
         $this->indent(+1);
-        $ret .= $this->indent() ."<div class=\"vertical-sidebar\">";
+        $ret .= $this->indent() ."<div class=\"vertical-sidebar-parent\">";
+        $this->indent(+1);
+        $ret .= $this->indent() ."<div id=\"vertical-sidebar\" class=\"vertical-sidebar\">";
         $ret .= $this->indent() . wfMessage($summary_name);
         $ret .= $this->indent() . "</div>";
         $this->indent(-1);
-        $ret .=$this->indent(). "</div>";
+        $ret .= $this->indent() . "</div>"; 
+        $this->indent(-1);
+        $ret .= $this->indent() . "</div>";
         return $ret;
     }
 }
