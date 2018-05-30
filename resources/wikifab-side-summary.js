@@ -2,7 +2,7 @@
 (function() {
 
 	var header_height = $('#mw-navigation').height();
-	var footer_height = $('.footer-main').height();
+	var footer_height = $('.footer-main').outerHeight();
 	var sidesummary_height = $('.SideSummary').height();
 
 	function checkOffset() {
