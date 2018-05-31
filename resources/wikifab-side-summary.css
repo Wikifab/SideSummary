@@ -88,7 +88,17 @@
 
 .vertical-sidebar li a,
 .vertical-sidebar li strong {
-    padding-left: 25px;
+    padding-left: 30px;
+}
+
+.vertical-sidebar li li a,
+.vertical-sidebar li li strong {
+    padding-left: 60px;
+}
+
+.vertical-sidebar li li li a,
+.vertical-sidebar li li li strong {
+    padding-left: 90px;
 }
 
 .vertical-sidebar li .fa {
@@ -219,16 +229,15 @@ div.SideSummary + div.container #bodyContent {
 	.vertical-sidebar .fa {
 	    width: 20px;
 	    font-size: 0.85em;
-	    margin-top: 10px;
+	    margin-top: 7px;
 	    text-align: center;
 	    z-index: 1000;
-	    border-radius: 0px;
+	    height: 18px;
+	    margin-left: 5px;
+	    padding-top: 4px;
+	    border-radius: 3px;
 	    color: #ccc;
 	    position: absolute;
-	}
-
-	.vertical-sidebar li a{
-		width: calc(100% - 20px);
 	}
 
 	.vertical-sidebar li ul{
@@ -240,8 +249,8 @@ div.SideSummary + div.container #bodyContent {
 	}
 	
 	.vertical-sidebar .fa:hover {
-		background-color:#ccc;
-		color:#aaa;
+		background-color:#bbb;
+		color:#fff;
 		cursor: pointer;
 	}
 	
