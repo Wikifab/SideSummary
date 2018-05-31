@@ -105,6 +105,10 @@
     float: left;
 }
 
+.vertical-sidebar li li .fa {
+   margin-left: 30px;
+}
+
 .vertical-sidebar li li li .fa {
     margin-left: 42px;
 }
@@ -173,6 +177,10 @@
     margin-top: 0px;
     position: fixed;
     top: 0;
+}
+
+.vertical-sidebar li.summarycollapse a:first-child {
+	font-weight: bold;
 }
 
 
