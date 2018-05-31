@@ -31,8 +31,9 @@ class SideSummary extends Component {
         if(!$summary_name) {
             return '';
         }
+        
         $ret = $this->indent() . '<div id="SideSummary" class="SideSummary">';
-        $ret .= $this->indent(). " <span class=\"toggle active\"> <i class=\"fa fa-times\"> </i></span>";
+        $ret .= $this->indent(). " <span class=\"toggle active\"> <i class=\"fa fa-times\"></i> <i class=\"fa fa-bars\"></i></span>";
         $this->indent(+1);
         $ret .= $this->indent() ."<div class=\"vertical-sidebar-parent\">";
         $this->indent(+1);

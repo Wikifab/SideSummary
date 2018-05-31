@@ -1,17 +1,19 @@
 
 (function() {
 
-	var header_height = $('#mw-navigation').height();
+	var header_height = $('#mw-navigation').outerHeight();
 	var footer_height = $('.footer-main').outerHeight();
 	var sidesummary_height = $('.SideSummary').height();
 
 	function checkOffset() {
-		if($(document).scrollTop() > header_height){
-			$('.SideSummary').css('position', 'fixed');
-			$('.SideSummary').css('top', '0');
+
+		var scroll = $(document).scrollTop();
+
+		if(scroll >= header_height){
+			$('.SideSummary').css('position','fixed');
+			$('.SideSummary').css('top','0px');
 		}else{
-			$('.SideSummary').css('position', 'initial');
-			$('.SideSummary').css('top', 'initial');
+			$('.SideSummary').css('position', 'absolute');
 		}
 
 		var scrollBottom = $(window).scrollTop() + $(window).height();
@@ -24,37 +26,42 @@
 
 	$(document).ready(function() {
 
-    	$(document).scroll(function() {
-		    checkOffset();
-		});
+		if(window.matchMedia("(min-width: 769px)").matches){
+			$(document).scroll(function() {
+			    checkOffset();
+			});
+		}
 		
 		// Seulement pour SideSummary
 		if ($('.SideSummary').length > 0){
 			$('.containerBodyWithoutSS').addClass('HasSideSummary');
 			//Quand on est à moins de 768px (portables jusqu'à l'ipad)                
 			if (window.matchMedia("(max-width: 768px)").matches) {
+				$('.containerBodyWithoutSS').css('padding-top', header_height);
 				$('.SideSummary').css('width', '80%');
 				// Ajout d'un span avec le overlay
 				$('.containerBodyWithoutSS').before("<span class=\"PushOverlay\"></span>");
 
 				// Menu fermé de base
 				$('.SideSummary').css('margin-left', '-80%');
-				$('.containerBodyWithoutSS').removeClass("positionFixed");
 				$('.PushOverlay').removeClass("active");
 
+				$('.toggle.active').removeClass('active');
+
 				// Bouton pour ouvrir le menu avec un effet de push sur la droite 
-				$('.toggle.active').click(function(){
-					$('.HasSideSummary').addClass("positionFixed");
+				$('.toggle .fa-bars').click(function(){
 					$('.PushOverlay').addClass("active");
+					$('.SideSummary .vertical-sidebar').css('display', 'block');
+					$('.SideSummary').css('margin-left', '0');
+					$('.toggle').hide();
 				});
+
 				$('.PushOverlay').click(function(){
-					$('.buttonOpen').show();
 					$('.SideSummary').css('margin-left', '-80%');
-					$('.HasSideSummary').removeClass("positionFixed");
 					$('.PushOverlay').removeClass("active");
+					$('.toggle').show();
 				});							
 			}
-			
 				
 			if(window.matchMedia("(min-width: 769px)").matches){
 
@@ -62,34 +69,29 @@
 				$('.containerBodyWithoutSS').addClass("pushBodyLeft");
 				$('.containerBodyWithoutSS').removeClass("pushBodyRight");
 				
-				$('body').on('click', '.toggle.active', function(){
+				$('body').on('click', '.toggle .fa-times', function(){
 					$('.SideSummary').css('margin-left', '-310px');
 					$('.containerBodyWithoutSS').addClass("pushBodyRight");
 					$('.containerBodyWithoutSS').removeClass("pushBodyLeft");
-					$(this).removeClass('active');
-					$(this).addClass('not-active');
-					$(this).find('i.fa-times').removeClass('fa-times').addClass('fa-bars');
+					$(this).parent().removeClass('active');
+					$(this).parent().addClass('not-active');
 				});
 				
-				$('body').on('click', '.toggle.not-active', function(){
-					console.log('it works');
+				$('body').on('click', '.toggle .fa-bars', function(){
 					$('.SideSummary').css('margin-left', '0px');
 					$('.containerBodyWithoutSS').addClass("pushBodyLeft");
 					$('.containerBodyWithoutSS').removeClass("pushBodyRight");
-					$(this).removeClass('not-active');
-					$(this).addClass('active');
-					$(this).find('i.fa-bars').removeClass('fa-bars').addClass('fa-times');
+					$(this).parent().removeClass('not-active');
+					$(this).parent().addClass('active');
 				});
 				
 				$(window).scroll(function() {    			
 					
 					var scroll = $(window).scrollTop();
 					if (scroll >= header_height) {		    	
-				        $('.containerBodyWithoutSS.pushBodyLeft').css('margin-left', '330px');
 				       	$('.SideSummary .vertical-sidebar').addClass('scrolling');
 					}
 					else {
-				        $('.containerBodyWithoutSS').css('margin-left', '0px');
 						$('.SideSummary .vertical-sidebar').removeClass('scrolling');
 					}
 				});

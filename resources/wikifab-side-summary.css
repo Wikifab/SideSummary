@@ -2,13 +2,14 @@
 	width: 330px;
 	float:left;
     z-index: 10;
-    transition: width .25s;
     padding-bottom:50px;
-    transition: all 0.5s ease 0s;
+    transition: margin 0.5s linear;
+    position: fixed;
 }
 
 .containerBodyWithoutSS{
-	transition: width 0.5s;
+	transition: width 0.5s, margin 0.5s linear;
+	width: auto;
 }
 
 .SideSummaryContainer{
@@ -34,7 +35,6 @@
 }
 
 .vertical-sidebar{
-	width: 310px;
 	background-color: #f8f8f8;
 	border-right: 1px solid #ccc;
 	float: left;
@@ -42,6 +42,8 @@
 	overflow: auto;
 	box-sizing: content-box;
 	padding-right: 50px; /* hide the scrollbar */
+	z-index: 1;
+	position: relative;
 }
 
 .vertical-sidebar *{
@@ -142,6 +144,23 @@
 	float: right;
 	text-align: center;
 }
+
+.toggle .fa-bars{
+	display: inline;
+}
+
+.toggle .fa-times{
+	display: none;
+}
+
+.toggle.active .fa-bars{
+	display: none;
+}
+
+.toggle.active .fa-times{
+	display: inline;
+}
+
 .hookButtonTop {
     margin-top: 0px;
     position: fixed;
@@ -163,8 +182,16 @@ div.SideSummary + div.container #bodyContent {
 
 @media (min-width: 769px) {
 
+	.vertical-sidebar{
+		width: 310px;
+	}
+
+	.toggle.active .fa-bars{
+		display: none;
+	}
+
 	.pushBodyLeft{
-		width: calc(100% - 330px);
+		margin-left: 330px
 	}
 
 	.pushBodyRight{
@@ -245,6 +272,17 @@ div.SideSummary + div.container #bodyContent {
 	}
 }
 @media (max-width: 768px) {
+
+	.SideSummary .vertical-sidebar{
+	    display: none;
+	    width: 100%;
+	    height: calc(100vh);
+	}
+
+	.toggle .fa-times{
+		display: none !important;
+	}
+
 	.PushOverlay.active {
 	    transition: opacity 1s;
 	    opacity: 1;
