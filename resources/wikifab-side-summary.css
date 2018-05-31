@@ -3,12 +3,12 @@
 	float:left;
     z-index: 10;
     padding-bottom:50px;
-    transition: margin 0.5s linear;
+    transition: margin 0.25s linear;
     position: fixed;
 }
 
 .containerBodyWithoutSS{
-	transition: width 0.5s, margin 0.5s linear;
+	transition: width 0.25s, margin 0.25s linear;
 	width: auto;
 }
 
@@ -220,13 +220,13 @@ div.SideSummary + div.container #bodyContent {
 	}
 	.vertical-sidebar .fa {
 	    width: 20px;
-	    height: 20px;
 	    font-size: 0.85em;
-	    margin-top: 5px;
-	    padding-top: 6px;
+	    margin-top: 10px;
 	    text-align: center;
-	    border-radius: 3px;
+	    z-index: 1000;
+	    border-radius: 0px;
 	    color: #ccc;
+	    position: absolute;
 	}
 
 	.vertical-sidebar li a{
