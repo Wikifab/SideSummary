@@ -86,16 +86,6 @@
     padding-left: 25px;
 }
 
-.vertical-sidebar li li li a,
-.vertical-sidebar li li li strong {
-    padding-left: 55px;
-}
-
-.vertical-sidebar li li li li a,
-.vertical-sidebar li li li li strong {
-    padding-left: 70px;
-}
-
 .vertical-sidebar li .fa {
     float: left;
 }
