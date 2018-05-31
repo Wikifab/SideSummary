@@ -340,7 +340,7 @@ div.SideSummary + div.container #bodyContent {
 	    color: #fff;
 	    font-size: 1.5em;
 	    z-index: 1;
-	    padding: 10px 15px 10px 35px;
+	    padding: 10px 35px 10px 15px;
 	}
 	
 	.positionFixed {
