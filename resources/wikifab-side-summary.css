@@ -35,7 +35,7 @@
 }
 
 .vertical-sidebar{
-	background-color: #f8f8f8;
+	background-color: #F2F4F8;
 	border-right: 1px solid #ccc;
 	float: left;
 	height: calc(100vh - 55px);
@@ -69,6 +69,10 @@
     width:100%;
 }
 
+.vertical-sidebar li a {
+	color: #0F0F0F;
+}
+
 .vertical-sidebar li a,
 .vertical-sidebar li strong {
 	padding: 6px 5px;
@@ -77,8 +81,9 @@
 }
 
 .vertical-sidebar li strong {
-    border-right: 3px solid #42B4E6;
+    border-right: 5px solid #0087CD;
     background-color:#fff;
+    color: #0087CD;
 }
 
 .vertical-sidebar li a,
@@ -227,7 +232,7 @@ div.SideSummary + div.container #bodyContent {
 	}
 
 	.vertical-sidebar li ul{
-		padding-left: 15px;
+		padding-left: 0px;
 	}
 
 	.vertical-sidebar a:hover {
