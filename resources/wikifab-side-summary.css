@@ -59,7 +59,10 @@
 	height: 100vh;
 }
 
-
+.vertical-sidebar li.active {
+	background-color: #F8F9FB;
+	color:#0F0F0F;
+}
 
 .vertical-sidebar li {
     float: left;
