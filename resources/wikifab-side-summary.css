@@ -10,6 +10,7 @@
 .containerBodyWithoutSS{
 	transition: width 0.25s, margin 0.25s linear;
 	width: auto;
+	min-height: 100vh; 
 }
 
 .SideSummaryContainer{
