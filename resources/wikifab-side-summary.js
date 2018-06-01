@@ -53,6 +53,7 @@
 					$('.PushOverlay').addClass("active");
 					$('.SideSummary .vertical-sidebar').css('display', 'block');
 					$('.SideSummary').css('margin-left', '0');
+					$('body').css('overflow', 'hidden');
 					$('.toggle').hide();
 				});
 
@@ -60,6 +61,7 @@
 					$('.SideSummary').css('margin-left', '-80%');
 					$('.PushOverlay').removeClass("active");
 					$('.toggle').show();
+					$('body').css('overflow', 'auto');
 				});							
 			}
 				
