@@ -36,6 +36,12 @@
     top:0;
 }
 
+.noscrollbody{
+	overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
 .vertical-sidebar{
 	background-color: #F2F4F8;
 	border-right: 1px solid #ccc;
