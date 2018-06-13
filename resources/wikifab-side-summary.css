@@ -5,6 +5,7 @@
     padding-bottom:50px;
     transition: margin 0.25s linear;
     position: fixed;
+    -webkit-overflow-scrolling:touch;
 }
 
 .containerBodyWithoutSS{
