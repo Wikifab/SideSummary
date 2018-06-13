@@ -1,81 +1,100 @@
 
 (function() {
-	
+
+	var header_height = $('#mw-navigation').outerHeight();
+	var footer_height = $('.footer-main').outerHeight();
+	var sidesummary_height = $('.SideSummary').height();
+
+	function checkOffset() {
+
+		var scroll = $(document).scrollTop();
+
+		if(scroll >= header_height){
+			$('.SideSummary').css('position','fixed');
+			$('.SideSummary').css('top','0px');
+		}else{
+			$('.SideSummary').css('position', 'absolute');
+		}
+
+		var scrollBottom = $(window).scrollTop() + $(window).height();
+	    if(scrollBottom > $('.footer-main').offset().top){
+	    	$('.SideSummary').addClass("bottom");
+	    } else {
+	    	$('.SideSummary').removeClass("bottom");
+	    }
+	}
+
 	$(document).ready(function() {
+
+		if(window.matchMedia("(min-width: 769px)").matches){
+			$(document).scroll(function() {
+			    checkOffset();
+			});
+		}
 		
 		// Seulement pour SideSummary
 		if ($('.SideSummary').length > 0){
 			$('.containerBodyWithoutSS').addClass('HasSideSummary');
 			//Quand on est à moins de 768px (portables jusqu'à l'ipad)                
 			if (window.matchMedia("(max-width: 768px)").matches) {
+				$('.containerBodyWithoutSS').css('padding-top', header_height);
+				$('.SideSummary').css('width', '80%');
 				// Ajout d'un span avec le overlay
 				$('.containerBodyWithoutSS').before("<span class=\"PushOverlay\"></span>");
 
 				// Menu fermé de base
-				$('.buttonOpen').show();
-				$('.SideSummary').css('width', '0px');
-				$('.containerBodyWithoutSS').removeClass("positionFixed");
+				$('.SideSummary').css('margin-left', '-80%');
 				$('.PushOverlay').removeClass("active");
 
+				$('.toggle.active').removeClass('active');
+
 				// Bouton pour ouvrir le menu avec un effet de push sur la droite 
-				$('.buttonOpen').click(function(){
-					$('.SideSummary').css('width', '80%');
-					$('.buttonOpen').hide();
-					$('.HasSideSummary').addClass("positionFixed");
+				$('.toggle .fa-bars').click(function(){
 					$('.PushOverlay').addClass("active");
-
-				
+					$('.SideSummary .vertical-sidebar').css('display', 'block');
+					$('.SideSummary').css('margin-left', '0');
+					$('body').css('overflow', 'hidden');
+					$('.toggle').hide();
 				});
+
 				$('.PushOverlay').click(function(){
-					$('.buttonOpen').show();
-					$('.SideSummary').css('width', '0px');
-					$('.HasSideSummary').removeClass("positionFixed");
+					$('.SideSummary').css('margin-left', '-80%');
 					$('.PushOverlay').removeClass("active");
-
-
+					$('.toggle').show();
+					$('body').css('overflow', 'auto');
 				});							
 			}
-			
 				
 			if(window.matchMedia("(min-width: 769px)").matches){
-				
-				$('.buttonClose').show();
-				$('.buttonOpen').hide();
-				$('.SideSummary').css('width', '250px');
+
+				$('.SideSummary').css('margin-left', '0px');
 				$('.containerBodyWithoutSS').addClass("pushBodyLeft");
 				$('.containerBodyWithoutSS').removeClass("pushBodyRight");
 				
-				$('.buttonClose').click(function(){
-					$('.buttonOpen').show();
-					$('.buttonClose').hide();
-					$('.SideSummary').css('width', '0px');
+				$('body').on('click', '.toggle .fa-times', function(){
+					$('.SideSummary').css('margin-left', '-310px');
 					$('.containerBodyWithoutSS').addClass("pushBodyRight");
 					$('.containerBodyWithoutSS').removeClass("pushBodyLeft");
-					
+					$(this).parent().removeClass('active');
+					$(this).parent().addClass('not-active');
 				});
 				
-				$('.buttonOpen').click(function(){
-					$('.buttonClose').show();
-					$('.buttonOpen').hide();
-					$('.SideSummary').css('width', '250px');
+				$('body').on('click', '.toggle .fa-bars', function(){
+					$('.SideSummary').css('margin-left', '0px');
 					$('.containerBodyWithoutSS').addClass("pushBodyLeft");
 					$('.containerBodyWithoutSS').removeClass("pushBodyRight");
+					$(this).parent().removeClass('not-active');
+					$(this).parent().addClass('active');
 				});
 				
 				$(window).scroll(function() {    			
 					
 					var scroll = $(window).scrollTop();
-					if (scroll >= 54) {		    	
-				        $('.SideSummary').addClass('hookMenuTop');
-				        $('.buttonOpen').addClass('hookButtonTop');
-				        $('.buttonClose').addClass('hookButtonTop');
-
+					if (scroll >= header_height) {		    	
+				       	$('.SideSummary .vertical-sidebar').addClass('scrolling');
 					}
 					else {
-						$('.SideSummary').removeClass('hookMenuTop');
-						$('.buttonOpen').removeClass('hookButtonTop');
-						$('.buttonClose').removeClass('hookButtonTop');
-
+						$('.SideSummary .vertical-sidebar').removeClass('scrolling');
 					}
 				});
 				// Permet de faire fonctionner le système des flèches avec les sous-menus 
@@ -100,11 +119,8 @@
 				
 			}
 					
-		
 	}
 
 	});		
 		
-		
-	
 })();

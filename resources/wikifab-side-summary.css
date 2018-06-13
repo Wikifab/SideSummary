@@ -1,15 +1,33 @@
 .SideSummary{
-    width: 250px;
-    position: absolute;
+	width: 330px;
 	float:left;
-	background-color: #f8f8f8;
-    overflow-x: hidden;
-    border-right: 1px solid #ccc;
     z-index: 10;
-    height:100%;
-    padding-top:15px;
-    transition: width .25s;
     padding-bottom:50px;
+    transition: margin 0.25s linear;
+    position: fixed;
+    -webkit-overflow-scrolling:touch;
+}
+
+.containerBodyWithoutSS{
+	transition: width 0.25s, margin 0.25s linear;
+	width: auto;
+	min-height: 100vh; 
+}
+
+.SideSummaryContainer{
+	width: 100%; 
+	height: 1000px;
+	background: #f8f8f8;
+	position: relative;
+}
+
+.SideSummary.bottom{
+	top: auto !important;
+	bottom: 0 !important;
+	position: absolute !important;
+	height: auto !important;
+	padding-bottom: 0;
+	transition: none;
 }
 
 .hookMenuTop {
@@ -18,10 +36,43 @@
     top:0;
 }
 
+.vertical-sidebar{
+	background-color: #F2F4F8;
+	border-right: 1px solid #ccc;
+	float: left;
+	height: calc(100vh - 55px);
+	overflow: auto;
+	box-sizing: content-box;
+	padding-right: 50px; /* hide the scrollbar */
+	z-index: 1;
+	position: relative;
+}
+
+.vertical-sidebar *{
+	box-sizing: border-box;
+}
+
+.vertical-sidebar-parent{
+	overflow: hidden;
+	border-right: 1px solid #ddd;
+}
+
+.vertical-sidebar.scrolling{
+	height: 100vh;
+}
+
+.vertical-sidebar li.active {
+	background-color: #F8F9FB;
+	color:#0F0F0F;
+}
 
 .vertical-sidebar li {
     float: left;
     width:100%;
+}
+
+.vertical-sidebar li a {
+	color: #0F0F0F;
 }
 
 .vertical-sidebar li a,
@@ -32,37 +83,32 @@
 }
 
 .vertical-sidebar li strong {
-    border-right: 3px solid #42B4E6;
+    border-right: 5px solid #0087CD;
     background-color:#fff;
+    color: #0087CD;
 }
 
 .vertical-sidebar li a,
 .vertical-sidebar li strong {
-    padding-left: 25px;
+    padding-left: 30px;
 }
 
 .vertical-sidebar li li a,
 .vertical-sidebar li li strong {
-    padding-left: 40px;
+    padding-left: 60px;
 }
 
 .vertical-sidebar li li li a,
 .vertical-sidebar li li li strong {
-    padding-left: 55px;
-}
-
-.vertical-sidebar li li li li a,
-.vertical-sidebar li li li li strong {
-    padding-left: 70px;
+    padding-left: 90px;
 }
 
 .vertical-sidebar li .fa {
-	margin-left: 2px;
     float: left;
 }
 
 .vertical-sidebar li li .fa {
-    margin-left: 17px;
+   margin-left: 30px;
 }
 
 .vertical-sidebar li li li .fa {
@@ -102,26 +148,40 @@
 	color: #aaa;
 	cursor: pointer;
 }
-.buttonOpen
- {
-    float: left;
-    transition: .2s;
-    padding: 6px 10px;
-    border-radius: 3px;
-    margin-top: -16px;
-    position: absolute;
-    z-index: 10;
-    transition: opacity 0.2s;
+.toggle
+{
+	width: 20px;
+	border-radius: 3px;
+	z-index: 1;
+	transition: opacity 0.2s;
+	left: 0;
+	float: right;
+	text-align: center;
 }
+
+.toggle .fa-bars{
+	display: inline;
+}
+
+.toggle .fa-times{
+	display: none;
+}
+
+.toggle.active .fa-bars{
+	display: none;
+}
+
+.toggle.active .fa-times{
+	display: inline;
+}
+
 .hookButtonTop {
     margin-top: 0px;
     position: fixed;
     top: 0;
 }
 
-
-.buttonOpen:hover,
-.buttonClose:hover {
+.toggle:hover{
 	cursor:pointer;
 }
 
@@ -134,12 +194,21 @@ div.SideSummary + div.container #bodyContent {
 }
 
 @media (min-width: 769px) {
-	.SideSummary {
-		margin-top:-20px;
+
+	.vertical-sidebar{
+		width: 310px;
 	}
-	.pushBodyLeft  {
-	    margin-left: 250px;
-	    width: calc(100% - 250px);
+
+	.toggle.active .fa-bars{
+		display: none;
+	}
+
+	.pushBodyLeft{
+		margin-left: 330px
+	}
+
+	.pushBodyRight{
+		width: calc(100% - 20px);
 	}
 	
 	.pushBodyLeft nav {
@@ -153,11 +222,7 @@ div.SideSummary + div.container #bodyContent {
 	    -o-transition: left 250ms ease;
 	    transition: left 250ms ease;
 	}
-	
-	.pushBodyRight{
-		margin-left:0px ;
-		transition: .25s;
-	}
+
 	.fixed {
 	    position: fixed;
 	    top: 0
@@ -168,15 +233,20 @@ div.SideSummary + div.container #bodyContent {
 	}
 	.vertical-sidebar .fa {
 	    width: 20px;
-	    float: left;
-	    height: 20px;
 	    font-size: 0.85em;
-	    margin-top: 5px;
-	    padding-top: 6px;
+	    margin-top: 7px;
 	    text-align: center;
+	    z-index: 1000;
+	    height: 18px;
+	    margin-left: 5px;
+	    padding-top: 4px;
 	    border-radius: 3px;
 	    color: #ccc;
 	    position: absolute;
+	}
+
+	.vertical-sidebar li ul{
+		padding-left: 0px;
 	}
 
 	.vertical-sidebar a:hover {
@@ -184,8 +254,8 @@ div.SideSummary + div.container #bodyContent {
 	}
 	
 	.vertical-sidebar .fa:hover {
-		background-color:#ccc;
-		color:#aaa;
+		background-color:#bbb;
+		color:#fff;
 		cursor: pointer;
 	}
 	
@@ -207,12 +277,24 @@ div.SideSummary + div.container #bodyContent {
 	}
 	i.right-arrow{
 		display:block;
+		float: left;
 	}
 	i.down-arrow{
 		display:none;
 	}
 }
 @media (max-width: 768px) {
+
+	.SideSummary .vertical-sidebar{
+	    display: none;
+	    width: 100%;
+	    height: calc(100vh);
+	}
+
+	.toggle .fa-times{
+		display: none !important;
+	}
+
 	.PushOverlay.active {
 	    transition: opacity 1s;
 	    opacity: 1;
@@ -252,15 +334,15 @@ div.SideSummary + div.container #bodyContent {
 	    text-align: center;
 	}
 	
-	.buttonOpen.hookButtonOpenTop,
-	.buttonOpen {
+	.toggle.hookButtonOpenTop,
+	.toggle {
 	    margin-top: 0px;
 	    position: fixed;
 	    top: 0;
 	    color: #fff;
 	    font-size: 1.5em;
 	    z-index: 1;
-	    padding: 10px 15px;
+	    padding: 10px 35px 10px 15px;
 	}
 	
 	.positionFixed {
