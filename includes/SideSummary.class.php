@@ -64,7 +64,6 @@ class SideSummary {
 			$param1 = $parser->internalParse($param1, false);
 			$isRecursion = false;
 		}
-		$parser->getOutput()->setProperty( 'SummaryName', $param1 );
 		// to ensure this data is retreived when using cache, we add it to parserOutput
 		$parser->getOutput()->setExtensionData( 'SideSummaryName', $param1 );
 
@@ -96,6 +95,7 @@ class SideSummary {
 		if( $summaryName) {
 			self::$summaryName = $summaryName;
 		}
+		$out->setProperty('SummaryName', $summaryName);
 	}
 
 	public static function onSkinTemplateNavigation(\SkinTemplate  &$skin, &$content_navigation ) {
