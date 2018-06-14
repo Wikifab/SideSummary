@@ -62,7 +62,9 @@
 					$('.PushOverlay').removeClass("active");
 					$('.toggle').show();
 					$('body').css('overflow', 'auto');
-				});							
+				});	
+
+				$('.vertical-sidebar .selflink').parents(".vertical-sidebar li").addClass('MainCurrentChapter').children('a').css('font-weight', "bold");						
 			}
 				
 			if(window.matchMedia("(min-width: 769px)").matches){
