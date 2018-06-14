@@ -52,6 +52,7 @@
 	padding-right: 50px; /* hide the scrollbar */
 	z-index: 1;
 	position: relative;
+	padding-bottom:30px;
 }
 
 .vertical-sidebar *{
