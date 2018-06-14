@@ -64,7 +64,9 @@
 					$('.toggle').show();
 					$('body').removeClass('noscrollbody');
 					$('html').removeClass('noscrollbody');
-				});							
+				});
+
+				$('.vertical-sidebar .selflink').parents(".vertical-sidebar li").addClass('MainCurrentChapter').children('a').css('font-weight', "bold");						
 			}
 				
 			if(window.matchMedia("(min-width: 769px)").matches){
