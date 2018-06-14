@@ -49,7 +49,7 @@
 				$('.toggle.active').removeClass('active');
 
 				// Bouton pour ouvrir le menu avec un effet de push sur la droite 
-				$('.toggle .fa-bars').click(function(){
+				$('.toggle').click(function(){
 					$('.PushOverlay').addClass("active");
 					$('.SideSummary .vertical-sidebar').css('display', 'block');
 					$('.SideSummary').css('margin-left', '0');
