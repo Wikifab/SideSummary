@@ -36,6 +36,12 @@
     top:0;
 }
 
+.noscrollbody{
+	overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
 .vertical-sidebar{
 	background-color: #F2F4F8;
 	border-right: 1px solid #ccc;
@@ -46,6 +52,7 @@
 	padding-right: 50px; /* hide the scrollbar */
 	z-index: 1;
 	position: relative;
+	padding-bottom:30px;
 }
 
 .vertical-sidebar *{
