@@ -99,7 +99,7 @@
 				});
 				// Permet de faire fonctionner le système des flèches avec les sous-menus 
 
-				$('.vertical-sidebar .selflink').parents(".vertical-sidebar li").addClass('summarycollapse');
+				$('.vertical-sidebar .selflink').parents(".vertical-sidebar li").addClass('summarycollapse').children('a').css('font-weight', "bold");
 				$('.vertical-sidebar .selflink').parent().addClass('active');
 				
 				$( '.vertical-sidebar li ' )
