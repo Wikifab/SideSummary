@@ -308,7 +308,7 @@ div.SideSummary + div.container #bodyContent {
 	    height: 100%;
 	    width: 100%;
 	    position: fixed;
-	    z-index: 1;
+	    z-index: 2;
 	    top: 0px;
 	    left: 0;
 	    background-color: rgba(0,0,0, 0.9);
