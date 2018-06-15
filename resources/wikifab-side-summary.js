@@ -24,6 +24,31 @@
 	    }
 	}
 
+	function menuGoToCurrent() {
+
+		if ( typeof menuGoToCurrent.run == 'undefined' ) {
+        // It has not... perform the initialization
+    	    menuGoToCurrent.run = false;
+    	}
+
+    	if (!menuGoToCurrent.run){
+
+    		var divElem = document.getElementById('vertical-sidebar');
+    		//make sure it's at the top first
+    		divElem.scrollTop = 0;
+			var chElem = document.getElementsByClassName('selflink')[0];
+			var chElemParents = $(chElem).parents('.vertical-sidebar li');
+			var scrollTo = chElem.offsetTop;
+			topPos = divElem.offsetTop;
+			if(chElemParents.length != 0){
+				var hightestParent = $(chElem).parents('.vertical-sidebar li').last();
+				scrollTo = hightestParent.offset().top;
+			}
+			divElem.scrollTop = scrollTo - topPos;
+			menuGoToCurrent.run = true;
+    	}
+	}
+
 	$(document).ready(function() {
 
 		if(window.matchMedia("(min-width: 769px)").matches){
@@ -55,6 +80,7 @@
 					$('.SideSummary').css('margin-left', '0');
 					$('body').css('overflow', 'hidden');
 					$('.toggle').hide();
+					menuGoToCurrent();
 				});
 
 				$('.PushOverlay').click(function(){
@@ -117,8 +143,7 @@
 					$(this).parent().removeClass('summarycollapse');
 				});
 				
-			}
-					
+			}	
 	}
 
 	});		
