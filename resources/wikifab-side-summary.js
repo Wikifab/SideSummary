@@ -142,6 +142,8 @@
 				$('.down-arrow').click(function(){
 					$(this).parent().removeClass('summarycollapse');
 				});
+
+				menuGoToCurrent();
 				
 			}	
 	}
