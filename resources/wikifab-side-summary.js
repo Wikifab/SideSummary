@@ -39,12 +39,15 @@
 			var chElem = document.getElementsByClassName('selflink')[0];
 			var chElemParents = $(chElem).parents('.vertical-sidebar li');
 			var scrollTo = chElem.offsetTop;
-			topPos = divElem.offsetTop;
 			if(chElemParents.length != 0){
-				var hightestParent = $(chElem).parents('.vertical-sidebar li').last();
+				var hightestParent = $(chElem).parents('.vertical-sidebar li.summarycollapse').last();
 				scrollTo = hightestParent.offset().top;
 			}
-			divElem.scrollTop = scrollTo - topPos;
+			if(window.matchMedia("(min-width: 769px)").matches){
+				var header = document.getElementById('mw-navigation');
+				scrollTo -= $(header).outerHeight();
+			}
+			divElem.scrollTop = scrollTo;
 			menuGoToCurrent.run = true;
     	}
 	}
@@ -123,6 +126,7 @@
 						$('.SideSummary .vertical-sidebar').removeClass('scrolling');
 					}
 				});
+
 				// Permet de faire fonctionner le système des flèches avec les sous-menus 
 
 				$('.vertical-sidebar .selflink').parents(".vertical-sidebar li").addClass('summarycollapse');
