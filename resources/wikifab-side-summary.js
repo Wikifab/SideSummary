@@ -40,7 +40,7 @@
 			var chElemParents = $(chElem).parents('.vertical-sidebar li');
 			var scrollTo = chElem.offsetTop;
 			if(chElemParents.length != 0){
-				var hightestParent = $(chElem).parents('.vertical-sidebar li.summarycollapse').last();
+				var hightestParent = $(chElem).parents('.vertical-sidebar li').last();
 				scrollTo = hightestParent.offset().top;
 			}
 			if(window.matchMedia("(min-width: 769px)").matches){
