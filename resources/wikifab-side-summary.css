@@ -62,6 +62,7 @@
 .vertical-sidebar-parent{
 	overflow: hidden;
 	border-right: 1px solid #ddd;
+	border-bottom: 3px solid #009530;
 }
 
 .vertical-sidebar.scrolling{
