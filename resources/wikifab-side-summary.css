@@ -46,7 +46,7 @@
 	background-color: #F2F4F8;
 	border-right: 1px solid #ccc;
 	float: left;
-	height: calc(100vh - 55px);
+	height: 100vh;
 	overflow: auto;
 	box-sizing: content-box;
 	padding-right: 50px; /* hide the scrollbar */
