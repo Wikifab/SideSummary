@@ -136,7 +136,7 @@
 				$('.vertical-sidebar .selflink').parents(".vertical-sidebar li").addClass('summarycollapse MainCurrentChapter').children('a').css('font-weight', "bold");
 				$('.vertical-sidebar .selflink').parent().addClass('active');
 				
-				$( '.vertical-sidebar li ' )
+				$( '.vertical-sidebar li' )
 					.filter(function( index ) {
 						return $( "li", this ).length > 0 ;
 					})
