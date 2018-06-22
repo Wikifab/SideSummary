@@ -71,7 +71,7 @@
 				$('.containerBodyWithoutSS').before("<span class=\"PushOverlay\"></span>");
 
 				// Menu fermé de base
-				$('.SideSummary').css('margin-left', '-80%');
+				$('.SideSummary').css('margin-left', '-100%');
 				$('.PushOverlay').removeClass("active");
 
 				$('.toggle.active').removeClass('active');
@@ -88,7 +88,7 @@
 				});
 
 				$('.PushOverlay').click(function(){
-					$('.SideSummary').css('margin-left', '-80%');
+					$('.SideSummary').css('margin-left', '-100%');
 					$('.PushOverlay').removeClass("active");
 					$('.toggle').show();
 					$('body').removeClass('noscrollbody');
