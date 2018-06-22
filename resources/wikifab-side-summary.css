@@ -43,9 +43,13 @@
 	height: calc(100vh - 55px);
 	overflow: auto;
 	box-sizing: content-box;
-	padding-right: 50px; /* hide the scrollbar */
 	z-index: 1;
 	position: relative;
+	width: 360px; /* hide the scrollbar */
+}
+
+.vertical-sidebar-child{
+	width: 310px;
 }
 
 .vertical-sidebar *{
@@ -54,7 +58,7 @@
 
 .vertical-sidebar-parent{
 	overflow: hidden;
-	border-right: 1px solid #ddd;
+	width: 310px;
 }
 
 .vertical-sidebar.scrolling{
@@ -195,10 +199,6 @@ div.SideSummary + div.container #bodyContent {
 
 @media (min-width: 769px) {
 
-	.vertical-sidebar{
-		width: 310px;
-	}
-
 	.toggle.active .fa-bars{
 		display: none;
 	}
@@ -287,7 +287,6 @@ div.SideSummary + div.container #bodyContent {
 
 	.SideSummary .vertical-sidebar{
 	    display: none;
-	    width: 100%;
 	    height: calc(100vh);
 	}
 
