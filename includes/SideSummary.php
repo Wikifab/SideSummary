@@ -38,7 +38,13 @@ class SideSummary extends Component {
         $ret .= $this->indent() ."<div class=\"vertical-sidebar-parent\">";
         $this->indent(+1);
         $ret .= $this->indent() ."<div id=\"vertical-sidebar\" class=\"vertical-sidebar\">";
+        $this->indent(+1);
+        $ret .= $this->indent() ."<div id=\"vertical-sidebar-child\" class=\"vertical-sidebar-child\">";
+        $this->indent(+1);
         $ret .= $this->indent() . wfMessage($summary_name);
+        $this->indent(-1);
+        $ret .= $this->indent() . "</div>";
+        $this->indent(-1);
         $ret .= $this->indent() . "</div>";
         $this->indent(-1);
         $ret .= $this->indent() . "</div>"; 
