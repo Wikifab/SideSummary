@@ -102,7 +102,7 @@
 				$('.vertical-sidebar .selflink').parents(".vertical-sidebar li").addClass('summarycollapse');
 				$('.vertical-sidebar .selflink').parent().addClass('active');
 				
-				$( '.vertical-sidebar li ' )
+				$( '.vertical-sidebar li' )
 					.filter(function( index ) {
 						return $( "li", this ).length > 0 ;
 					})

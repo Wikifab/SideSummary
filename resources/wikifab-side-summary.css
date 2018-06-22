@@ -268,7 +268,7 @@ div.SideSummary + div.container #bodyContent {
 	.summarycollapse > ul > li, .summarycollapse > ul > li > ul > li {
 		display:block;
 	}
-	.vertical-sidebar > ul > li > ul > li, .vertical-sidebar > ul > li > ul > li > ul > li  {
+	.vertical-sidebar-child > ul > li > ul > li, .vertical-sidebar-child > ul > li > ul > li > ul > li  {
 		display:none;	
 	}
 	
