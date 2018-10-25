@@ -214,10 +214,6 @@ div.SideSummary + div.container #bodyContent {
 	.pushBodyLeft{
 		margin-left: 330px
 	}
-
-	.pushBodyRight{
-		width: calc(100% - 20px);
-	}
 	
 	.pushBodyLeft nav {
 	    z-index: 10;
