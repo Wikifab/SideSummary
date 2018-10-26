@@ -66,7 +66,7 @@
 			//Quand on est à moins de 768px (portables jusqu'à l'ipad)                
 			if (window.matchMedia("(max-width: 768px)").matches) {
 				$('.containerBodyWithoutSS').css('padding-top', header_height);
-				$('.SideSummary').css('width', '80%');
+				$('.SideSummary').css('width', 'auto');
 				// Ajout d'un span avec le overlay
 				$('.containerBodyWithoutSS').before("<span class=\"PushOverlay\"></span>");
 
