@@ -8,10 +8,21 @@
     -webkit-overflow-scrolling:touch;
 }
 
-.containerBodyWithoutSS{
+.contentContainer .container {
+	max-width: 100%;
+}
+
+.contentContainer {
+	padding:0;
+}
+
+.containerBodyWithoutSS {
 	transition: width 0.25s, margin 0.25s linear;
-	width: auto;
+    width: -moz-available;    
+    width: -webkit-fill-available;
+    width: fill-available;
 	min-height: 100vh; 
+	padding: 0;
 }
 
 .SideSummaryContainer{
@@ -66,7 +77,7 @@
 .vertical-sidebar-parent{
 	overflow: hidden;
 	width: 310px;
-	border-bottom: 3px solid #009530;
+    border-right: 1px solid #dddddd;
 }
 
 .vertical-sidebar.scrolling{
@@ -183,8 +194,18 @@
 	display: none;
 }
 
-.toggle.active .fa-times{
-	display: inline;
+.toggle.active .fa-times {
+    display: block;
+    position: relative;
+    left: -24px;
+    z-index: 2;
+    top: 7px;
+    opacity: .3;
+    transition: opacity 0.15s;
+}
+
+.toggle.active .fa-times:hover {
+    opacity: 1;
 }
 
 .hookButtonTop {
@@ -212,7 +233,7 @@ div.SideSummary + div.container #bodyContent {
 	}
 
 	.pushBodyLeft{
-		margin-left: 330px
+		margin-left: 310px
 	}
 	
 	.pushBodyLeft nav {
@@ -287,6 +308,13 @@ div.SideSummary + div.container #bodyContent {
 		display:none;
 	}
 }
+
+@media (max-width: 992px) {
+	.PageNetworkLinks {
+		display: none;
+	}
+}
+
 @media (max-width: 768px) {
 
 	.SideSummary .vertical-sidebar{
