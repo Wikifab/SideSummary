@@ -1,17 +1,25 @@
-.sidePageSummary{
-    height: 100%;
+.sidePageSummary {
     width: 269px;
-    background-color: #f8f8f8;
-    padding-top: 20px 20px;
-    border-right: 1px solid #ccc;
-    float : left;
+    border-left: 1px solid #ccc;
     position : absolute;
-    z-index:10;
-    bottom:auto;
+    display: inline-block;
 }
 .sidePageSummary .toc {
 	padding:20px;
 }
+
+.sidePageSummary .nav-pills > li > a {
+    border-radius: 0;
+    color: #74818D;
+    font-size: 0.9em;
+}
+
+.sidePageSummary .nav-pills > li.active a {
+    background-color: transparent;
+    color: #52bad5; 
+    border-left: 2px solid #52bad5;
+}
+
 .hookMenu {
     margin-top: 0px;
     position: fixed;
@@ -24,8 +32,10 @@
 }
 
 .bodyPushWhenSidePage {
-	float:left;
-	margin-left : 299px;	
+    max-width: calc(100% - 269px);
+    float: left;
+    width: 100%;
+    padding-right: 15px;
 }
 
 .bodyPushWhenSidePage #toc {

@@ -6,7 +6,7 @@
 		if($('.sidePageSummary').length > 0 ){
 			
 			// Permet de mettre toute la div entre le header et le body
-			$('.vertical-sidebar-page').insertBefore("#bodyContent");
+			$('.vertical-sidebar-page').insertAfter("#bodyContent");
 		
 			//Quand on est à moins de 992px 				
 			if (window.matchMedia("(max-width: 992px)").matches) {
