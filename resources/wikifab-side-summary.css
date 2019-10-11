@@ -183,7 +183,9 @@
 }
 
 .toggle .fa-bars{
-	display: inline;
+    display: block;
+    padding: 7px;
+    width: 28px;
 }
 
 .toggle .fa-times{
@@ -197,11 +199,13 @@
 .toggle.active .fa-times {
     display: block;
     position: relative;
-    left: -24px;
+    left: -29px;
     z-index: 2;
-    top: 7px;
+    top: 0px;
     opacity: .3;
     transition: opacity 0.15s;
+    padding: 8px;
+    width: 28px;
 }
 
 .toggle.active .fa-times:hover {
