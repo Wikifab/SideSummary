@@ -24,7 +24,7 @@
 				$(window).scroll(function() {    
 	
 				    var scroll = $(window).scrollTop();
-				    if (scroll >= 210) {			    	
+				    if (scroll >= 185) {			    	
 				    	$('.sidePageSummary').addClass('hookMenu');
 				    	$('.sidePageSummary').removeClass('AlwaysSeeMenu');
 

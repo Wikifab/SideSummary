@@ -1,23 +1,37 @@
 .sidePageSummary {
     width: 269px;
-    border-left: 1px solid #ccc;
     position : absolute;
     display: inline-block;
+    height: 100%;
 }
+
+.sidePageSummary .toctitle {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+}
+
 .sidePageSummary .toc {
 	padding:20px;
+    border-left: 1px solid #ccc;
 }
 
 .sidePageSummary .nav-pills > li > a {
-    border-radius: 0;
     color: #74818D;
     font-size: 0.9em;
+    padding: 3px 11px;
 }
 
-.sidePageSummary .nav-pills > li.active a {
-    background-color: transparent;
-    color: #52bad5; 
-    border-left: 2px solid #52bad5;
+.sidePageSummary #toc ul {
+    margin-top: 2px;
+}
+
+.sidePageSummary .nav-pills > li.active > a {
+    color: #ffffff;
+    background-color: #52bad5;
+}
+
+.sidePageSummary .nav-stacked > li + li {
+    margin-top: 0;
 }
 
 .hookMenu {
